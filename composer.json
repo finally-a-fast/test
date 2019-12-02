@@ -1,0 +1,64 @@
+{
+    "name": "finally-a-fast/fafcms",
+    "description": "Finally a fast CMS",
+    "keywords": [
+        "cms",
+        "yii2",
+        "project template"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://www.finally-a-fast.com/",
+    "support": {
+        "issues": "https://gitlab.com/finally-a-fast/fafcms/issues",
+        "source": "https://gitlab.com/finally-a-fast/fafcms"
+    },
+    "authors": [
+        {
+            "name": "Christoph Möke",
+            "email": "christophmoeke@gmail.com",
+            "role": "Project Leader"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.1",
+        "finally-a-fast/fafcms-core": "dev-master",
+        "finally-a-fast/fafcms-module-filemanager": "dev-master",
+        "finally-a-fast/fafcms-module-blogmanager": "dev-master",
+        "finally-a-fast/fafcms-module-shariff": "dev-master",
+        "finally-a-fast/fafcms-module-cookie-consent": "dev-master",
+        "npm-asset/animate.css": "^3.7",
+        "nolimits4web/swiper": "^4.5",
+        "npm-asset/shufflejs": "^5.2",
+        "yii-ui/yii2-overlay-scrollbars-asset-bundle": "^1.0.0"
+    },
+    "require-dev": {
+        "npm-asset/google-closure-compiler-java": "^20190331.000000",
+        "npm-asset/google-closure-compiler-linux": "^20190331.000000",
+        "npm-asset/google-closure-compiler-osx": "^20190331.000000",
+        "yiisoft/yii2-debug": "^2.1.5",
+        "yiisoft/yii2-gii": "^2.1.0",
+        "matthiasmullie/minify": "^1.3",
+        "roave/security-advisories": "dev-master"
+    },
+    "scripts": {
+        "compress": [
+            "command -v postcss >/dev/null 2>&1 || { echo >&2 \"\\033[0;31mError: postcss is not installed. Please run 'npm install -g postcss-cli autoprefixer'\"; exit 1; } && echo \"\\033[0;32mpostcss is installed\\033[0m\";",
+            "./fafcms asset/compress config/compress.php config/compressed.php"
+        ]
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+image: phpdockerio/php74-cli
+
+before_script:
+    - apt-get update
+    - apt-get install zip unzip
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - php composer-setup.php
+    - php -r "unlink('composer-setup.php');"
+    - php composer.phar install
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+stage_deploy:
+    artifacts:
+        paths:
+            - build/
+    only:
+        - master
+    script:
+        - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+        - ssh -p2112 faf-production@www.finally-a-fast.com "mkdir _tmp"
+        - scp -p2112 -r build/* faf-production@www.finally-a-fast.com:_tmp
+        - ssh -p2112 faf-production@www.finally-a-fast.com "mv html _old && mv _tmp html"
+        - ssh -p2112 faf-production@www.finally-a-fast.com "rm -rf _foo"
