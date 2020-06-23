@@ -63,7 +63,7 @@ docs:
   only:
     - master
   script:
-    - [ ! -d "phpDocumentor" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git
+    - "[ ! -d \"phpDocumentor\"] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
     - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
     - php composer.phar install -d phpDocumentor
     - ./phpDocumentor/bin/phpdoc
