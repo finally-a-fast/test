@@ -1,17 +1,18 @@
 {
-    "name": "finally-a-fast/fafcms",
-    "description": "Finally a fast CMS",
+    "name": "finally-a-fast/fafcms-helpers",
     "keywords": [
-        "cms",
         "yii2",
-        "project template"
+        "fafcms",
+        "fafcms-helpers"
     ],
-    "type": "project",
+    "type": "library",
+    "description": "This package provides basic helpers for the Finally a fast CMS.",
     "license": "MIT",
     "homepage": "https://www.finally-a-fast.com/",
     "support": {
-        "issues": "https://gitlab.com/finally-a-fast/fafcms/issues",
-        "source": "https://gitlab.com/finally-a-fast/fafcms"
+        "issues": "https://gitlab.com/finally-a-fast/fafcms-helpers/issues",
+        "source": "https://gitlab.com/finally-a-fast/fafcms-helpers",
+        "docs": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs"
     },
     "authors": [
         {
@@ -23,36 +24,41 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.1",
+        "php": "^7.3",
         "finally-a-fast/fafcms-core": "dev-master",
-        "finally-a-fast/fafcms-module-filemanager": "dev-master",
-        "finally-a-fast/fafcms-module-blogmanager": "dev-master",
-        "finally-a-fast/fafcms-module-shariff": "dev-master",
-        "finally-a-fast/fafcms-module-cookie-consent": "dev-master",
-        "npm-asset/animate.css": "^3.7",
-        "nolimits4web/swiper": "^4.5",
-        "npm-asset/shufflejs": "^5.2",
-        "yii-ui/yii2-overlay-scrollbars-asset-bundle": "^1.0.0"
+        "robinherbots/jquery.inputmask": "^5.0"
     },
     "require-dev": {
-        "npm-asset/google-closure-compiler-java": "^20190331.000000",
-        "npm-asset/google-closure-compiler-linux": "^20190331.000000",
-        "npm-asset/google-closure-compiler-osx": "^20190331.000000",
-        "yiisoft/yii2-debug": "^2.1.5",
-        "yiisoft/yii2-gii": "^2.1.0",
-        "matthiasmullie/minify": "^1.3",
         "roave/security-advisories": "dev-master"
-    },
-    "scripts": {
-        "compress": [
-            "command -v postcss >/dev/null 2>&1 || { echo >&2 \"\\033[0;31mError: postcss is not installed. Please run 'npm install -g postcss-cli autoprefixer'\"; exit 1; } && echo \"\\033[0;32mpostcss is installed\\033[0m\";",
-            "./fafcms asset/compress config/compress.php config/compressed.php"
-        ]
     },
     "config": {
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
+        }
+    },
+    "extra": {
+        "bootstrap": "fafcms\\cookieconsent\\Bootstrap",
+        "fafcms": {
+            "name": "Helpers",
+            "logo": "https://www.finally-a-fast.com/packages/fafcms-helpers/assets/logo.jpg",
+            "header": "https://www.finally-a-fast.com/packages/fafcms-helpers/assets/header.jpg",
+            "docs": {
+                "description": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/description.md",
+                "support": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/support.md",
+                "changelog": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/changelog.md",
+                "developers": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/developers.md"
+            }
+        }
+    },
+    "scripts": {
+        "build": [
+            "echo hello"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "fafcms\\helpers\\": "src"
         }
     },
     "repositories": [
