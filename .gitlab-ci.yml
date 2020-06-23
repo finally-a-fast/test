@@ -35,21 +35,39 @@ variables:
   MYSQL_DATABASE: mysql_database
   MYSQL_ROOT_PASSWORD: mysql_strong_password
 
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - php composer.phar publish
+
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
-#test:
-#  script:
-#    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
+#
+#  unit_test:
+#    stage: test
+#    script:
+#      - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
 
-stage_deploy:
-    artifacts:
-        paths:
-            - build/
-    only:
-        - master
-    script:
-        - ssh-add <(echo "$STAGING_PRIVATE_KEY")
-        - ssh -p2112 faf-production@www.finally-a-fast.com "mkdir _tmp"
-        - scp -p2112 -r build/* faf-production@www.finally-a-fast.com:_tmp
-        - ssh -p2112 faf-production@www.finally-a-fast.com "mv html _old && mv _tmp html"
-        - ssh -p2112 faf-production@www.finally-a-fast.com "rm -rf _foo"
+generatedocs:
+  stage: deploy
+  only:
+    - master
+  script:
+    - phpdoc -d . -t docs/api
+
+deploy:
+  artifacts:
+    paths:
+      - build/
+  only:
+    - master
+  when: manual
+  script:
+    - echo "deployed"
+#    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+#    - ssh -p2112 faf-production@www.finally-a-fast.com "mkdir _tmp"
+#    - scp -p2112 -r build/* faf-production@www.finally-a-fast.com:_tmp
+#    - ssh -p2112 faf-production@www.finally-a-fast.com "mv html _old && mv _tmp html"
+#    - ssh -p2112 faf-production@www.finally-a-fast.com "rm -rf _foo"
