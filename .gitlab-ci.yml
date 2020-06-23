@@ -36,6 +36,12 @@ variables:
   MYSQL_DATABASE: mysql_database
   MYSQL_ROOT_PASSWORD: mysql_strong_password
 
+stages:
+  - build
+  - test
+  - docs
+  - deploy
+
 build:
   stage: build
   only:
@@ -52,7 +58,7 @@ build:
 #      - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
 
 docs:
-  stage: deploy
+  stage: docs
   only:
     - master
   script:
