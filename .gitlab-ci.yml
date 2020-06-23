@@ -4,6 +4,7 @@ image: php:7.4.0-cli
 
 # Select what we should cache between builds
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - vendor/
     - phpDocumentor/
@@ -62,7 +63,8 @@ docs:
   only:
     - master
   script:
-    - git clone https://github.com/phpDocumentor/phpDocumentor.git
+    - [ ! -d "phpDocumentor" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git
+    - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
     - php composer.phar install -d phpDocumentor
     - ./phpDocumentor/bin/phpdoc
   artifacts:
