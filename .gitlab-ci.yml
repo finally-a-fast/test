@@ -18,6 +18,7 @@ before_script:
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.email "bot@finally-a-fast.com"
     - git config --global user.name "FAF Bot"
+    - curl -sS https://getcomposer.org/installer | php
 
 # Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
 # See http://docs.gitlab.com/ce/ci/services/README.html for examples.
@@ -42,7 +43,6 @@ build:
         - mkdir build
         - ls -lisa
         - rsync -Rr . ./build/
-        - curl -sS https://getcomposer.org/installer | php
         - php composer.phar update -d build
         - php composer.phar build -d build
     artifacts:
@@ -64,13 +64,14 @@ docs:
     stage: docs
     only:
         - dev
-    before_script:
-        - docker pull phpdoc/phpdoc
     script:
-#        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
-#        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
-#        - php composer.phar install -d phpDocumentor
-        - docker run --rm -v $(pwd):/data phpdoc/phpdoc
+        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
+        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
+        - php composer.phar install -d phpDocumentor
+        - cd build
+        - ../phpDocumentor/bin/phpdoc
+        - rm -rf ../docs
+        - mv docs ../docs
     artifacts:
         paths:
             - docs
