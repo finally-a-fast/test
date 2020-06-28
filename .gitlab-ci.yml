@@ -29,4 +29,4 @@ git-rebase-ts:
         - touch a.txt
         - git add --all
         - git commit -a -m "Use ${CI_PROJECT_NAME} artifacts from pipeline ${CI_PIPELINE_ID}"
-        - git push --force origin master
+        - git push
