@@ -2,9 +2,25 @@
 # Select image from https://hub.docker.com/_/php/
 image: php:7.4.0-cli
 
+# Select what we should cache between builds
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+        - vendor/
+        - phpDocumentor/
+
 before_script:
     - apt-get update -yqq
     - apt-get install -yqq git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
+    # Install PHP extensions
+    # - docker-php-ext-install mbstring mcrypt  curl json intl gd xml zip bz2 opcache
+    #- docker-php-ext-install zip bz2
+    # Install & enable Xdebug for code coverage reports
+    #- pecl install xdebug
+    #- docker-php-ext-enable xdebug
+    # Install and run Composer
+    - curl -sS https://getcomposer.org/installer | php
+    - php composer.phar update
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - mkdir -p ~/.ssh
     - eval $(ssh-agent -s)
@@ -13,11 +29,53 @@ before_script:
     - git config --global user.email "bot@finally-a-fast.com"
     - git config --global user.name "FAF Bot"
 
-stages:
-    - git-robot
+# Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
+# See http://docs.gitlab.com/ce/ci/services/README.html for examples.
+services:
+    - mysql:5.7
 
-git-rebase-ts:
-    stage: git-robot
+# Set any variables we need
+variables:
+    # Configure mysql environment variables (https://hub.docker.com/r/_/mysql/)
+    MYSQL_DATABASE: mysql_database
+    MYSQL_ROOT_PASSWORD: mysql_strong_password
+
+stages:
+    - build
+#    - test
+    - docs
+    - merge
+#    - deploy
+
+build:
+    stage: build
+    script:
+        - php composer.phar build
+
+# Run our tests
+# If Xdebug was installed you can generate a coverage report and see code coverage metrics.
+#
+#test:
+#    stage: test
+#    script:
+#        - echo "test"
+##    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
+
+docs:
+    stage: docs
+    only:
+        - dev
+    script:
+        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
+        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
+        - php composer.phar install -d phpDocumentor
+        - ./phpDocumentor/bin/phpdoc
+    artifacts:
+        paths:
+            - docs
+
+merge:
+    stage: merge
     only:
         - dev
     allow_failure: true
@@ -27,7 +85,28 @@ git-rebase-ts:
         - git checkout dev
         - git checkout master
         - git merge dev
-        - touch e.txt
+        - rm -rf docs
         - git add --all
-        - git commit -a -m "Use ${CI_PROJECT_NAME} artifacts from pipeline ${CI_PIPELINE_ID}"
+        - git commit -a -m "Cleaned up master branch from pipeline ${CI_PIPELINE_ID}"
         - git push
+        - git checkout docs
+        - cp -r ../docs .
+        - git add --all
+        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
+        - git push
+
+#deploy:
+#    stage: deploy
+#    artifacts:
+#        paths:
+#            - build/
+#    only:
+#        - master
+#    when: manual
+#    script:
+#        - echo "deployed"
+##    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+##    - ssh -p2112 faf-production@www.finally-a-fast.com "mkdir _tmp"
+##    - scp -p2112 -r build/* faf-production@www.finally-a-fast.com:_tmp
+##    - ssh -p2112 faf-production@www.finally-a-fast.com "mv html _old && mv _tmp html"
+##    - ssh -p2112 faf-production@www.finally-a-fast.com "rm -rf _foo"
