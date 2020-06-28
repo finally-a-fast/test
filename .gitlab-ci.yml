@@ -11,7 +11,7 @@ cache:
 
 before_script:
     - apt-get update -yqq
-    - apt-get install -yqq git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
+    - apt-get install -yqq rsync git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
     # Install PHP extensions
     # - docker-php-ext-install mbstring mcrypt  curl json intl gd xml zip bz2 opcache
     #- docker-php-ext-install zip bz2
@@ -48,9 +48,9 @@ build:
     stage: build
     script:
         - mkdir build
-        - cp -r * build
-        - curl -sS https://getcomposer.org/installer | php
         - ls -lisa
+        - rsync -Rr . ./build/
+        - curl -sS https://getcomposer.org/installer | php
         - cd build
         - ls -lisa
         - php composer.phar update -d build
