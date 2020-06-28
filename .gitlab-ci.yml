@@ -14,15 +14,7 @@ before_script:
     - git config --global user.name "FAF Bot"
 
 stages:
-    - build
     - git-robot
-
-build:
-    stage: build
-    only:
-        - dev
-    script:
-        - touch test.txt
 
 git-rebase-ts:
     stage: git-robot
@@ -34,6 +26,6 @@ git-rebase-ts:
         - cd ${CI_PROJECT_NAME}
         - git checkout dev
         - git rebase master dev
-        - toch a.txt
+        - touch a.txt
         - git commit -a -m "Use ${CI_PROJECT_NAME} artifacts from pipeline ${CI_PIPELINE_ID}"
         - git push --force origin master
