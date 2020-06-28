@@ -1,13 +1,7 @@
-[![Finally a fast CMS](https://www.finally-a-fast.com/logos/logo-cms-readme.jpg)](https://www.finally-a-fast.com/) | Docs | Guide | Test
+[![Finally a fast CMS](https://www.finally-a-fast.com/logos/logo-cms-readme.jpg)](https://www.finally-a-fast.com/) | Docs | Guide | ##NAME##
 ============================
 
-Introduction
-------------
-
-* [About FAFCMS](a.md)
-
-
-Getting Started
+Der Anfang
 ---------------
 
-* [What do you need to know](b.md)
+Lorem ipsum.
