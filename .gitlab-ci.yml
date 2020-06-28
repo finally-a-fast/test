@@ -39,6 +39,8 @@ stages:
 
 build:
     stage: build
+    only:
+        - dev
     script:
         - mkdir build
         - ls -lisa
@@ -91,10 +93,12 @@ merge:
         - git merge dev
         - rm -rf *
         - cp -r ../build/* .
+        - rm -rf docs
+        - git add --all
         - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}"
         - git push
         - git checkout docs
-        - cp -rf *
+        - rm -rf *
         - cp -r ../docs/* .
         - git add --all
         - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
