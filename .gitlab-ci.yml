@@ -27,5 +27,6 @@ git-rebase-ts:
         - git checkout dev
         - git rebase master dev
         - touch a.txt
+        - git add --all
         - git commit -a -m "Use ${CI_PROJECT_NAME} artifacts from pipeline ${CI_PIPELINE_ID}"
         - git push --force origin master
