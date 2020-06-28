@@ -101,7 +101,7 @@ merge:
         - rm -rf *
         - cp -r ../docs/* .
         - git add --all
-        - git commit -a -m "Updated docs from pipeline ##${CI_PIPELINE_ID}"
+        - git commit -a -m "Updated docs from pipeline ###${CI_PIPELINE_ID}"
         - git push
 
 #deploy:
