@@ -75,14 +75,14 @@
         <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/app.html"><abbr title="\app">app</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/app-helpers.html"><abbr title="\app\helpers">helpers</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/fafcms.html"><abbr title="\fafcms">fafcms</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/fafcms-helpers.html"><abbr title="\fafcms\helpers">helpers</abbr></a></li>
                                     <li><a href="../packages/fafcms-fafcms.html"><abbr title="\fafcms\fafcms">fafcms</abbr></a></li>
-                            </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/app.html"><abbr title="\app">app</abbr></a></h3>
-                        <ul class="phpdocumentor-list">
-                                    <li><a href="../packages/app-helpers.html"><abbr title="\app\helpers">helpers</abbr></a></li>
                             </ul>
                         </section>
     
@@ -124,7 +124,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="../classes/fafcms-helpers-traits-HashIdTrait.html"><abbr title="\fafcms\helpers\traits\HashIdTrait">HashIdTrait</abbr></a>                    </span>
+                            <abbr title="\fafcms\helpers\traits\HashIdTrait">HashIdTrait</abbr>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -948,13 +948,6 @@ $orders = $user-&gt;orders;</code></pre>
 <dd>Returns the first error of every attribute in the model.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/fafcms-helpers-traits-HashIdTrait.html#method_getHashId">getHashId()</a>
-    <span>
-                        &nbsp;: string    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-db-BaseActiveRecord.html#method_getIsNewRecord">getIsNewRecord()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -1053,16 +1046,16 @@ $orders = $user-&gt;orders;</code></pre>
 <dd>Returns a value indicating whether there is any handler attached to the named event.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/yii-db-ActiveRecord.html#method_hasMany">hasMany()</a>
+    <a href="../classes/yii-db-BaseActiveRecord.html#method_hasMany">hasMany()</a>
     <span>
-                        &nbsp;: <a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a>    </span>
+                        &nbsp;: <a href="../classes/yii-db-ActiveQueryInterface.html"><abbr title="\yii\db\ActiveQueryInterface">ActiveQueryInterface</abbr></a>    </span>
 </dt>
 <dd>Declares a `has-many` relation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/yii-db-BaseActiveRecord.html#method_hasMany">hasMany()</a>
+    <a href="../classes/yii-db-ActiveRecord.html#method_hasMany">hasMany()</a>
     <span>
-                        &nbsp;: <a href="../classes/yii-db-ActiveQueryInterface.html"><abbr title="\yii\db\ActiveQueryInterface">ActiveQueryInterface</abbr></a>    </span>
+                        &nbsp;: <a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a>    </span>
 </dt>
 <dd>Declares a `has-many` relation.</dd>
 
@@ -6135,37 +6128,6 @@ values are the corresponding error messages. An empty array will be returned if 
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getHashId">
-        getHashId()
-        <a href="#method_getHashId" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/traits/HashIdTrait.php"><a href="../files/src-traits-hashidtrait.html"><abbr title="src/traits/HashIdTrait.php">HashIdTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getHashId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getIsNewRecord">
         getIsNewRecord()
         <a href="#method_getIsNewRecord" class="headerlink"><i class="fas fa-link"></i></a>
@@ -6812,60 +6774,6 @@ For example,</p>
         <a href="#method_hasMany" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecord.php"><a href="../files/vendor-yiisoft-yii2-db-activerecord.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecord.php">ActiveRecord.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">0</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Declares a `has-many` relation.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">hasMany</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$link</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a></span></code>
-
-        <section class="phpdocumentor-description"><p>see [[BaseActiveRecord::hasMany()]] for more info</p></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$class</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the class name of the related record</p></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$link</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the primary-foreign key constraint. The keys of the array refer to
-the attributes of the record associated with the <code class="prettyprint">$class</code> model, while the values of the
-array refer to the corresponding attributes in <strong>this</strong> AR class.</p></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_hasMany">
-        hasMany()
-        <a href="#method_hasMany" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/BaseActiveRecord.php"><a href="../files/vendor-yiisoft-yii2-db-baseactiverecord.html"><abbr title="vendor/yiisoft/yii2/db/BaseActiveRecord.php">BaseActiveRecord.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">430</span>
@@ -6921,6 +6829,60 @@ array refer to the corresponding attributes in <strong>this</strong> AR class.</
             &mdash;
             <section class="phpdocumentor-description"><p>the relational query object.</p></section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_hasMany">
+        hasMany()
+        <a href="#method_hasMany" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecord.php"><a href="../files/vendor-yiisoft-yii2-db-activerecord.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecord.php">ActiveRecord.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">0</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Declares a `has-many` relation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">hasMany</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$link</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"><p>see [[BaseActiveRecord::hasMany()]] for more info</p></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$class</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the class name of the related record</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$link</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the primary-foreign key constraint. The keys of the array refer to
+the attributes of the record associated with the <code class="prettyprint">$class</code> model, while the values of the
+array refer to the corresponding attributes in <strong>this</strong> AR class.</p></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="../classes/yii-db-ActiveQuery.html"><abbr title="\yii\db\ActiveQuery">ActiveQuery</abbr></a></span>
+            &mdash;
+        
     
 </article>
                     <article

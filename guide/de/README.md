@@ -1,5 +1,5 @@
-[![Finally a fast CMS](https://www.finally-a-fast.com/logos/logo-cms-readme.jpg)](https://www.finally-a-fast.com/) Finally a fast CMS - Helpers
-================================================
+[![Finally a fast CMS](https://www.finally-a-fast.com/logos/logo-cms-readme.jpg)](https://www.finally-a-fast.com/) | Docs | Guide | Test
+============================
 
 Introduction
 ------------
