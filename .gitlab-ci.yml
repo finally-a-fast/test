@@ -25,9 +25,8 @@ git-rebase-ts:
         - git clone git@gitlab.com:${CI_PROJECT_PATH}.git
         - cd ${CI_PROJECT_NAME}
         - git checkout dev
-        - git rebase master dev
-        - git switch master
-        - touch a.txt
+        - git rebase dev master
+        - touch b.txt
         - git add --all
         - git commit -a -m "Use ${CI_PROJECT_NAME} artifacts from pipeline ${CI_PIPELINE_ID}"
-        - git push
+        - git push --force
