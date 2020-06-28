@@ -51,7 +51,7 @@
     },
     "scripts": {
         "build": [
-            "echo hello"
+            "touch foo.txt"
         ]
     },
     "autoload": {

@@ -2,25 +2,15 @@
 # Select image from https://hub.docker.com/_/php/
 image: php:7.4.0-cli
 
-# Select what we should cache between builds
-cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-        - vendor/
-        - phpDocumentor/
-
 before_script:
     - apt-get update -yqq
-    - apt-get install -yqq git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
+    - apt-get install -yqq rsync git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
     # Install PHP extensions
     # - docker-php-ext-install mbstring mcrypt  curl json intl gd xml zip bz2 opcache
     #- docker-php-ext-install zip bz2
     # Install & enable Xdebug for code coverage reports
     #- pecl install xdebug
     #- docker-php-ext-enable xdebug
-    # Install and run Composer
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer.phar update
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - mkdir -p ~/.ssh
     - eval $(ssh-agent -s)
@@ -28,11 +18,11 @@ before_script:
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.email "bot@finally-a-fast.com"
     - git config --global user.name "FAF Bot"
+    - curl -sS https://getcomposer.org/installer | php
 
 # Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
 # See http://docs.gitlab.com/ce/ci/services/README.html for examples.
-services:
-    - mysql:5.7
+
 
 # Set any variables we need
 variables:
@@ -50,12 +40,22 @@ stages:
 build:
     stage: build
     script:
-        - php composer.phar build
+        - mkdir build
+        - ls -lisa
+        - rsync -Rr . ./build/
+        - php composer.phar update -d build
+        - php composer.phar build -d build
+    artifacts:
+        paths:
+            - build
+        expire_in: 1 day
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
 #
 #test:
+#        services:
+#            - mysql:5.7
 #    stage: test
 #    script:
 #        - echo "test"
@@ -69,10 +69,14 @@ docs:
         - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
         - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
         - php composer.phar install -d phpDocumentor
-        - ./phpDocumentor/bin/phpdoc
+        - cd build
+        - ../phpDocumentor/bin/phpdoc
+        - rm -rf ../docs
+        - mv docs ../docs
     artifacts:
         paths:
             - docs
+        expire_in: 1 day
 
 merge:
     stage: merge
@@ -85,12 +89,13 @@ merge:
         - git checkout dev
         - git checkout master
         - git merge dev
-        - rm -rf docs
-        - git add --all
-        - git commit -a -m "Cleaned up master branch from pipeline ${CI_PIPELINE_ID}"
+        - rm -rf *
+        - cp -r ../build/* .
+        - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}"
         - git push
         - git checkout docs
-        - cp -r ../docs .
+        - cp -rf *
+        - cp -r ../docs/* .
         - git add --all
         - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
         - git push
