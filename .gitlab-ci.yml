@@ -48,6 +48,7 @@ build:
     artifacts:
         paths:
             - build
+        expire_in: 1 day
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
@@ -75,28 +76,30 @@ docs:
     artifacts:
         paths:
             - docs
-#
-#merge:
-#    stage: merge
-#    only:
-#        - dev
-#    allow_failure: true
-#    script:
-#        - git clone git@gitlab.com:${CI_PROJECT_PATH}.git
-#        - cd ${CI_PROJECT_NAME}
-#        - git checkout dev
-#        - git checkout master
-#        - git merge dev
-#        - rm -rf docs
-#        - git add --all
-#        - git commit -a -m "Cleaned up master branch from pipeline ${CI_PIPELINE_ID}"
-#        - git push
-#        - git checkout docs
-#        - cp -r ../docs/* .
-#        - git add --all
-#        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
-#        - git push
-#
+        expire_in: 1 day
+
+merge:
+    stage: merge
+    only:
+        - dev
+    allow_failure: true
+    script:
+        - git clone git@gitlab.com:${CI_PROJECT_PATH}.git
+        - cd ${CI_PROJECT_NAME}
+        - git checkout dev
+        - git checkout master
+        - git merge dev
+        - rm -rf *
+        - cp -r ../build/* .
+        - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}"
+        - git push
+        - git checkout docs
+        - cp -rf *
+        - cp -r ../docs/* .
+        - git add --all
+        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
+        - git push
+
 #deploy:
 #    stage: deploy
 #    artifacts:
