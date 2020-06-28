@@ -4,7 +4,7 @@ image: php:7.4.0-cli
 
 # Select what we should cache between builds
 cache:
-    key: ${CI_COMMIT_REF_SLUG}
+#    key: ${CI_COMMIT_REF_SLUG}
     paths:
         - vendor/
         - phpDocumentor/
@@ -18,9 +18,6 @@ before_script:
     # Install & enable Xdebug for code coverage reports
     #- pecl install xdebug
     #- docker-php-ext-enable xdebug
-    # Install and run Composer
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer.phar update
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - mkdir -p ~/.ssh
     - eval $(ssh-agent -s)
@@ -50,7 +47,17 @@ stages:
 build:
     stage: build
     script:
-        - php composer.phar build
+        - mkdir build
+        - cp -r * build
+        - curl -sS https://getcomposer.org/installer | php
+        - ls -lisa
+        - cd build
+        - ls -lisa
+        - php composer.phar update -d build
+        - php composer.phar build -d build
+    artifacts:
+        paths:
+            - build
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
@@ -62,39 +69,40 @@ build:
 ##    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
 
 docs:
+    image: phpdoc/phpdoc
     stage: docs
     only:
         - dev
     script:
-        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
-        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
-        - php composer.phar install -d phpDocumentor
-        - ./phpDocumentor/bin/phpdoc
+#        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
+#        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
+#        - php composer.phar install -d phpDocumentor
+        - phpdoc --help
     artifacts:
         paths:
             - docs
-
-merge:
-    stage: merge
-    only:
-        - dev
-    allow_failure: true
-    script:
-        - git clone git@gitlab.com:${CI_PROJECT_PATH}.git
-        - cd ${CI_PROJECT_NAME}
-        - git checkout dev
-        - git checkout master
-        - git merge dev
-        - rm -rf docs
-        - git add --all
-        - git commit -a -m "Cleaned up master branch from pipeline ${CI_PIPELINE_ID}"
-        - git push
-        - git checkout docs
-        - cp -r ../docs .
-        - git add --all
-        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
-        - git push
-
+#
+#merge:
+#    stage: merge
+#    only:
+#        - dev
+#    allow_failure: true
+#    script:
+#        - git clone git@gitlab.com:${CI_PROJECT_PATH}.git
+#        - cd ${CI_PROJECT_NAME}
+#        - git checkout dev
+#        - git checkout master
+#        - git merge dev
+#        - rm -rf docs
+#        - git add --all
+#        - git commit -a -m "Cleaned up master branch from pipeline ${CI_PIPELINE_ID}"
+#        - git push
+#        - git checkout docs
+#        - cp -r ../docs/* .
+#        - git add --all
+#        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
+#        - git push
+#
 #deploy:
 #    stage: deploy
 #    artifacts:
