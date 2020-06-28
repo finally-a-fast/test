@@ -61,16 +61,16 @@ build:
 ##    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
 
 docs:
-    services:
-        - phpdoc/phpdoc
     stage: docs
     only:
         - dev
+    before_script:
+        - docker pull phpdoc/phpdoc
     script:
 #        - "[ ! -d \"phpDocumentor\" ] && git clone https://github.com/phpDocumentor/phpDocumentor.git"
 #        - git --git-dir=phpDocumentor/.git --work-tree=phpDocumentor pull
 #        - php composer.phar install -d phpDocumentor
-        - phpdoc__phpdoc --help
+        - docker run --rm -v $(pwd):/data phpdoc/phpdoc
     artifacts:
         paths:
             - docs
