@@ -1,18 +1,17 @@
 {
-    "name": "finally-a-fast/fafcms-test",
+    "name": "finally-a-fast/test",
     "keywords": [
-        "yii2",
-        "fafcms",
-        "fafcms-helpers"
+        "test",
+        "fafcms"
     ],
-    "type": "library",
-    "description": "This package provides basic helpers for the Finally a fast CMS.",
+    "type": "yii2-extension",
+    "description": "This package is just to test stuff.",
     "license": "MIT",
     "homepage": "https://www.finally-a-fast.com/",
     "support": {
-        "issues": "https://gitlab.com/finally-a-fast/fafcms-helpers/issues",
-        "source": "https://gitlab.com/finally-a-fast/fafcms-helpers",
-        "docs": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs"
+        "issues": "https://gitlab.com/finally-a-fast/fafcms-test/issues",
+        "source": "https://gitlab.com/finally-a-fast/fafcms-test",
+        "docs": "https://www.finally-a-fast.com/packages/fafcms-test/docs"
     },
     "authors": [
         {
@@ -25,8 +24,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.3",
-        "finally-a-fast/fafcms-core": "dev-master",
-        "robinherbots/jquery.inputmask": "^5.0"
+        "finally-a-fast/fafcms-core": "dev-master"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
@@ -40,14 +38,14 @@
     "extra": {
         "bootstrap": "fafcms\\cookieconsent\\Bootstrap",
         "fafcms": {
-            "name": "Helpers",
-            "logo": "https://www.finally-a-fast.com/packages/fafcms-helpers/assets/logo.jpg",
-            "header": "https://www.finally-a-fast.com/packages/fafcms-helpers/assets/header.jpg",
+            "name": "test",
+            "logo": "https://www.finally-a-fast.com/packages/fafcms-test/assets/logo.jpg",
+            "header": "https://www.finally-a-fast.com/packages/fafcms-test/assets/header.jpg",
             "docs": {
-                "description": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/description.md",
-                "support": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/support.md",
-                "changelog": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/changelog.md",
-                "developers": "https://www.finally-a-fast.com/packages/fafcms-helpers/docs/developers.md"
+                "description": "https://www.finally-a-fast.com/packages/fafcms-test/docs/description.md",
+                "support": "https://www.finally-a-fast.com/packages/fafcms-test/docs/support.md",
+                "changelog": "https://www.finally-a-fast.com/packages/fafcms-test/docs/changelog.md",
+                "developers": "https://www.finally-a-fast.com/packages/fafcms-test/docs/developers.md"
             }
         }
     },
@@ -58,7 +56,7 @@
     },
     "autoload": {
         "psr-4": {
-            "fafcms\\helpers\\": "src"
+            "fafcms\\test\\": "src"
         }
     },
     "repositories": [
