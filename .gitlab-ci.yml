@@ -90,18 +90,18 @@ merge:
         - cd ${CI_PROJECT_NAME}
         - git checkout dev
         - git checkout master
-        - git merge -s recursive -X theirs dev || git commit -a -m "Merged conflict from pipeline ${CI_PIPELINE_ID}"
+        - git merge -s recursive -X theirs dev || git commit -a -m "Merged conflict from pipeline #${CI_PIPELINE_ID}"
         - rm -rf *
         - cp -r ../build/* .
         - rm -rf docs
         - git add --all
-        - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}"
+        - git commit -a -m "Created build from pipeline #${CI_PIPELINE_ID}"
         - git push
         - git checkout docs
         - rm -rf *
         - cp -r ../docs/* .
         - git add --all
-        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
+        - git commit -a -m "Updated docs from pipeline #${CI_PIPELINE_ID}"
         - git push
 
 #deploy:
