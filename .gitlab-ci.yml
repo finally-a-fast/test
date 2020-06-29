@@ -95,13 +95,13 @@ merge:
         - cp -r ../build/* .
         - rm -rf docs
         - git add --all
-        - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}"
+        - git commit -a -m "Created build from pipeline ${CI_PIPELINE_ID}" || echo "No build changes"
         - git push
         - git checkout docs
         - rm -rf *
         - cp -r ../docs/* .
         - git add --all
-        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}"
+        - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}" || echo "No docs changes"
         - git push
 
 #deploy:
