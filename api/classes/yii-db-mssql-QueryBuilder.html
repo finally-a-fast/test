@@ -122,7 +122,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
             <p class="phpdocumentor-summary">QueryBuilder is the query builder for MS SQL Server databases (version 2008 and above).</p>
@@ -580,11 +580,12 @@ to instance of [[yii\db\condition\ConditionInterface|ConditionInterface]] accord
 <dd>Creates a SQL command for dropping a check constraint.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/yii-db-QueryBuilder.html#method_dropColumn">dropColumn()</a>
+    <a href="../classes/yii-db-mssql-QueryBuilder.html#method_dropColumn">dropColumn()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Builds a SQL statement for dropping a DB column.</dd>
+<dd>Drop all constraints before column delete
+{@inheritdoc}</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-db-mssql-QueryBuilder.html#method_dropCommentFromColumn">dropCommentFromColumn()</a>
@@ -696,7 +697,10 @@ to instance of [[yii\db\condition\ConditionInterface|ConditionInterface]] accord
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Creates an INSERT SQL statement.</dd>
+<dd>{@inheritdoc}
+Added OUTPUT construction for getting inserted data (for SQL Server 2005 or later)
+OUTPUT clause - The OUTPUT clause is new to SQL Server 2005 and has the ability to access
+the INSERTED and DELETED tables as is the case with a trigger.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-db-mssql-QueryBuilder.html#method_renameColumn">renameColumn()</a>
@@ -871,6 +875,13 @@ default expression builders for this query builder. See [[expressionBuilders]] d
                         &nbsp;: array    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/yii-db-mssql-QueryBuilder.html#method_dropConstraintsForColumn">dropConstraintsForColumn()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Builds a SQL statement for dropping constraints for column of table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/yii-db-QueryBuilder.html#method_getTableUniqueColumnNames">getTableUniqueColumnNames()</a>
@@ -1077,7 +1088,7 @@ for the named table removing constraints which did not cover the specified colum
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
     
@@ -1811,7 +1822,7 @@ For example, 'string' will be turned into 'varchar(255)', while 'string not null
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for adding comment to column.</p>
@@ -1884,7 +1895,7 @@ For example, 'string' will be turned into 'varchar(255)', while 'string not null
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for adding comment to table.</p>
@@ -1949,7 +1960,7 @@ For example, 'string' will be turned into 'varchar(255)', while 'string not null
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a SQL command for adding a default value constraint to an existing table.</p>
@@ -2252,7 +2263,7 @@ The name will be properly quoted by the method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL statement for changing the definition of a column.</p>
@@ -2293,6 +2304,20 @@ For example, 'string' will be turned into 'varchar(255)', while 'string not null
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="../classes/yii-base-NotSupportedException.html"><abbr title="\yii\base\NotSupportedException">NotSupportedException</abbr></a></span>
+                                                                                    <section class="phpdocumentor-description"><p>if this is not supported by the underlying DBMS.</p></section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
@@ -3560,7 +3585,7 @@ the values will be automatically enclosed within a pair of percentage characters
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds the ORDER BY and LIMIT/OFFSET clauses and appends them to the given SQL.</p>
@@ -4086,7 +4111,7 @@ the values will be automatically enclosed within a pair of percentage characters
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL statement for enabling or disabling integrity check.</p>
@@ -4594,23 +4619,24 @@ The name will be properly quoted by the method.</p></section>
         <a href="#method_dropColumn" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">818</span>
+    <span class="phpdocumentor-element-found-in__line">632</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Builds a SQL statement for dropping a DB column.</p>
+        <p class="phpdocumentor-summary">Drop all constraints before column delete
+{@inheritdoc}</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">dropColumn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$column</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">dropColumn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$column</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>the table whose column is to be dropped. The name will be properly quoted by the method.</p></section>
@@ -4618,7 +4644,7 @@ The name will be properly quoted by the method.</p></section>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$column</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>the name of the column to be dropped. The name will be properly quoted by the method.</p></section>
@@ -4648,7 +4674,7 @@ The name will be properly quoted by the method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">365</span>
+    <span class="phpdocumentor-element-found-in__line">392</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for adding comment to column.</p>
@@ -4713,7 +4739,7 @@ The name will be properly quoted by the method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">374</span>
+    <span class="phpdocumentor-element-found-in__line">401</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for adding comment to table.</p>
@@ -4770,7 +4796,7 @@ The name will be properly quoted by the method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">193</span>
+    <span class="phpdocumentor-element-found-in__line">220</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a SQL command for dropping a default value constraint.</p>
@@ -5224,7 +5250,7 @@ the next new row's primary key will have the maximum existing value +1.</p></sec
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">571</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an abstract column type into a physical column type.</p>
@@ -5529,10 +5555,13 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">441</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates an INSERT SQL statement.</p>
+        <p class="phpdocumentor-summary">{@inheritdoc}
+Added OUTPUT construction for getting inserted data (for SQL Server 2005 or later)
+OUTPUT clause - The OUTPUT clause is new to SQL Server 2005 and has the ability to access
+the INSERTED and DELETED tables as is the case with a trigger.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -5598,7 +5627,7 @@ They should be bound to the DB command later.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL statement for renaming a column.</p>
@@ -5658,7 +5687,7 @@ They should be bound to the DB command later.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL statement for renaming a DB table.</p>
@@ -5710,7 +5739,7 @@ They should be bound to the DB command later.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">209</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a SQL statement for resetting the sequence value of a table&#039;s primary key.</p>
@@ -5779,7 +5808,7 @@ the next new row's primary key will have a value 1.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">437</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a SELECT EXISTS() SQL statement.</p>
@@ -6008,7 +6037,7 @@ in [[expressionBuilders]] property.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates an UPDATE SQL statement.</p>
@@ -6082,7 +6111,7 @@ so that they can be bound to the DB command later.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">451</span>
+    <span class="phpdocumentor-element-found-in__line">504</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates an SQL statement to insert rows into a database table if
@@ -6185,7 +6214,7 @@ They should be bound to the DB command later.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for adding or updating a comment to a table or a column. The command built will check if a comment
@@ -6269,7 +6298,7 @@ comment to the table instead. The column name will be properly quoted by the met
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds a SQL command for removing a comment from a table or a column. The command built will check if a comment
@@ -6398,7 +6427,7 @@ default condition classes for the query builder. See [[conditionClasses]] docs f
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains array of default expression builders. Extend this method and override it, if you want to change
@@ -6431,7 +6460,7 @@ default expression builders for this query builder. See [[expressionBuilders]] d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">531</span>
+    <span class="phpdocumentor-element-found-in__line">584</span>
 </aside>
 
         <p class="phpdocumentor-summary">Extracts table alias if there is one or returns false</p>
@@ -6473,7 +6502,7 @@ default expression builders for this query builder. See [[expressionBuilders]] d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">385</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of column names given model name.</p>
@@ -6605,7 +6634,7 @@ default expression builders for this query builder. See [[expressionBuilders]] d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">428</span>
 </aside>
 
     
@@ -6665,7 +6694,7 @@ default expression builders for this query builder. See [[expressionBuilders]] d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds the ORDER BY/LIMIT/OFFSET clauses for SQL SERVER 2012 or newer.</p>
@@ -6733,7 +6762,7 @@ default expression builders for this query builder. See [[expressionBuilders]] d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds the ORDER BY/LIMIT/OFFSET clauses for SQL SERVER 2005 to 2008.</p>
@@ -7102,6 +7131,79 @@ The constraints will be unique by their column names.</p></section>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dropConstraintsForColumn">
+        dropConstraintsForColumn()
+        <a href="#method_dropConstraintsForColumn" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">602</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Builds a SQL statement for dropping constraints for column of table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">dropConstraintsForColumn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$column</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the table whose constraint is to be dropped. The name will be properly quoted by the method.</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$column</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the column whose constraint is to be dropped. The name will be properly quoted by the method.</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>type of constraint, leave empty for all type of constraints(for example: D - default, 'UQ' - unique, 'C' - check)</p></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-objects-transact-sql"><abbr title="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-objects-transact-sql">https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-objects-transact-sql</abbr></a></span>
+                                                            
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the DROP CONSTRAINTS SQL</p></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getTableUniqueColumnNames">
         getTableUniqueColumnNames()
         <a href="#method_getTableUniqueColumnNames" class="headerlink"><i class="fas fa-link"></i></a>
@@ -7172,7 +7274,7 @@ The constraints will be unique by their column names.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-querybuilder.html"><abbr title="vendor/yiisoft/yii2/db/mssql/QueryBuilder.php">QueryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">448</span>
 </aside>
 
         <p class="phpdocumentor-summary">Normalizes data to be saved into the table, performing extra preparations and type converting, if necessary.</p>

@@ -457,6 +457,13 @@
 <dd>Initializes Oracle specific mutex component implementation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/yii-mutex-Mutex.html#method_isAcquired">isAcquired()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Checks if a lock is currently acquired</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-base-Component.html#method_off">off()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -2233,6 +2240,63 @@ You may override this method when you implemented the php magic method <code cla
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isAcquired">
+        isAcquired()
+        <a href="#method_isAcquired" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/mutex/Mutex.php"><a href="../files/vendor-yiisoft-yii2-mutex-mutex.html"><abbr title="vendor/yiisoft/yii2/mutex/Mutex.php">Mutex.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Checks if a lock is currently acquired</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">isAcquired</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>of the lock to check</p></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Returns true if currently acquired</p></section>
+
     
 </article>
                     <article

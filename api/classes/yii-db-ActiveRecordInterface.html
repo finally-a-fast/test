@@ -398,7 +398,7 @@ at class (static) level as well.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">398</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deletes the record from the database.</p>
@@ -432,7 +432,7 @@ Note that it is possible that the number of rows deleted is 0, even though the d
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">321</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deletes records using the provided conditions.</p>
@@ -481,7 +481,7 @@ An empty condition will match all records.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a value indicating whether the given active record is the same as the current one.</p>
@@ -598,7 +598,7 @@ $customers = Customer::find()-&gt;where('age&gt;30')-&gt;all();</code></pre></se
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">284</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a list of active record models that match the specified primary key value(s) or a set of column values.</p>
@@ -619,6 +619,7 @@ primary keys and not an empty <code class="prettyprint">WHERE</code> condition.<
 matching all of them (or an empty array if none was found). Note that <code class="prettyprint">['id' =&gt; 1, 2]</code> is treated as
 a non-associative array.
 Column names are limited to current records table columns for SQL DBMS, or filtered otherwise to be limted to simple filter conditions.</li>
+<li>a yii\db\Expression: The expression will be used directly. (@since 2.0.37)</li>
 </ul>
 <p>This method will automatically call the <code class="prettyprint">all()</code> method and return an array of [[ActiveRecordInterface|ActiveRecord]]
 instances.</p>
@@ -693,7 +694,7 @@ $model = Post::findOne(Yii::$app-&gt;request-&gt;get('id'));</code></pre></secti
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a single active record model instance by a primary key or an array of column values.</p>
@@ -711,6 +712,7 @@ first record (or <code class="prettyprint">null</code> if not found).</li>
 <li>an associative array of name-value pairs: query by a set of attribute values and return a single record
 matching all of them (or <code class="prettyprint">null</code> if not found). Note that <code class="prettyprint">['id' =&gt; 1, 2]</code> is treated as a non-associative array.
 Column names are limited to current records table columns for SQL DBMS, or filtered otherwise to be limited to simple filter conditions.</li>
+<li>a yii\db\Expression: The expression will be used directly. (@since 2.0.37)</li>
 </ul>
 <p>That this method will automatically call the <code class="prettyprint">one()</code> method and return an [[ActiveRecordInterface|ActiveRecord]]
 instance.</p>
@@ -844,7 +846,7 @@ $model = Post::findOne(Yii::$app-&gt;request-&gt;get('id'));</code></pre></secti
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the connection used by this AR class.</p>
@@ -877,7 +879,7 @@ $model = Post::findOne(Yii::$app-&gt;request-&gt;get('id'));</code></pre></secti
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">402</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a value indicating whether the current record is new (not saved in the database).</p>
@@ -1009,7 +1011,7 @@ the key value is <code class="prettyprint">null</code>).</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">423</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the relation object with the specified name.</p>
@@ -1108,7 +1110,7 @@ It can be declared in either the ActiveRecord class itself or one of its behavio
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">364</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 </aside>
 
         <p class="phpdocumentor-summary">Inserts the record into the database using the attribute values of this record.</p>
@@ -1256,7 +1258,7 @@ meaning all attributes that are loaded from DB will be saved.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">450</span>
+    <span class="phpdocumentor-element-found-in__line">452</span>
 </aside>
 
         <p class="phpdocumentor-summary">Establishes the relationship between two records.</p>
@@ -1323,7 +1325,7 @@ This parameter is only meaningful for a relationship involving a junction table
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 </aside>
 
         <p class="phpdocumentor-summary">Populates the named relation with the related records.</p>
@@ -1423,7 +1425,7 @@ This parameter is only meaningful for a relationship involving a junction table
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 </aside>
 
         <p class="phpdocumentor-summary">Saves the current record.</p>
@@ -1549,7 +1551,7 @@ meaning all attributes that are loaded from DB will be saved.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">466</span>
 </aside>
 
         <p class="phpdocumentor-summary">Destroys the relationship between two records.</p>
@@ -1612,7 +1614,7 @@ If true, the model containing the foreign key will be deleted.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 </aside>
 
         <p class="phpdocumentor-summary">Saves the changes to this active record into the database.</p>
@@ -1675,7 +1677,7 @@ update execution is successful.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php"><a href="../files/vendor-yiisoft-yii2-db-activerecordinterface.html"><abbr title="vendor/yiisoft/yii2/db/ActiveRecordInterface.php">ActiveRecordInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates records using the provided attribute values and conditions.</p>

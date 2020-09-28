@@ -280,7 +280,7 @@ for encryption/decryption on all platforms. For the highest security level PHP v
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="../classes/yii-base-Security.html#property__useLibreSSL">$_useLibreSSL</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: bool            </span>
 </dt>
 <dd></dd>
 
@@ -585,12 +585,26 @@ for encryption/decryption on all platforms. For the highest security level PHP v
 </dt>
 <dd>Generates a salt that can be used to generate a password hash.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/yii-base-Security.html#method_shouldUseLibreSSL">shouldUseLibreSSL()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/yii-base-Component.html#method_attachBehaviorInternal">attachBehaviorInternal()</a>
     <span>
                         &nbsp;: <a href="../classes/yii-base-Behavior.html"><abbr title="\yii\base\Behavior">Behavior</abbr></a>    </span>
 </dt>
 <dd>Attaches a behavior to this component.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/yii-base-Security.html#method_isWindows">isWindows()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd></dd>
 
         </dl>
 
@@ -1067,7 +1081,7 @@ uses <code class="prettyprint">password_hash()</code> when available or <code cl
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 </aside>
 
     
@@ -1097,13 +1111,13 @@ uses <code class="prettyprint">password_hash()</code> when available or <code cl
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">442</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$_useLibreSSL</span>
     </code>
 
@@ -1935,7 +1949,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">703</span>
+    <span class="phpdocumentor-element-found-in__line">722</span>
 </aside>
 
         <p class="phpdocumentor-summary">Performs string comparison using timing attack resistant approach.</p>
@@ -2000,7 +2014,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Verifies and decrypts data encrypted with [[encryptByKey()]].</p>
@@ -2073,7 +2087,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 </aside>
 
         <p class="phpdocumentor-summary">Verifies and decrypts data encrypted with [[encryptByPassword()]].</p>
@@ -2215,7 +2229,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 </aside>
 
         <p class="phpdocumentor-summary">Encrypts data using a cryptographic key.</p>
@@ -2300,7 +2314,7 @@ to hash input or output data.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 </aside>
 
         <p class="phpdocumentor-summary">Encrypts data using a password.</p>
@@ -2414,7 +2428,7 @@ poor-quality or compromised passwords.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">612</span>
+    <span class="phpdocumentor-element-found-in__line">631</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates a secure hash from a password and a random salt.</p>
@@ -2507,7 +2521,7 @@ might increase in future versions of PHP (<a href="https://secure.php.net/manual
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">486</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates specified number of random bytes.</p>
@@ -2582,7 +2596,7 @@ might increase in future versions of PHP (<a href="https://secure.php.net/manual
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">565</span>
+    <span class="phpdocumentor-element-found-in__line">584</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates a random string of specified length.</p>
@@ -2762,7 +2776,7 @@ might increase in future versions of PHP (<a href="https://secure.php.net/manual
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">428</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prefixes data with a keyed hash value so that it can later be detected if it is tampered.</p>
@@ -2992,7 +3006,7 @@ You may override this method when you implemented the php magic method <code cla
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 </aside>
 
         <p class="phpdocumentor-summary">Derives a key from the given input key using the standard HKDF algorithm.</p>
@@ -3121,7 +3135,7 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">737</span>
+    <span class="phpdocumentor-element-found-in__line">756</span>
 </aside>
 
         <p class="phpdocumentor-summary">Masks a token to make it uncompressible.</p>
@@ -3345,7 +3359,7 @@ handler list.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Derives a key from the given password using the standard PBKDF2 algorithm.</p>
@@ -3492,7 +3506,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">750</span>
+    <span class="phpdocumentor-element-found-in__line">769</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unmasks a token previously masked by `maskToken`.</p>
@@ -3549,7 +3563,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">453</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validates if the given data is tampered.</p>
@@ -3636,7 +3650,7 @@ hex digits will be generated.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">641</span>
+    <span class="phpdocumentor-element-found-in__line">660</span>
 </aside>
 
         <p class="phpdocumentor-summary">Verifies a password against a hash.</p>
@@ -3709,7 +3723,7 @@ hex digits will be generated.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 </aside>
 
         <p class="phpdocumentor-summary">Decrypts data.</p>
@@ -3806,7 +3820,7 @@ hex digits will be generated.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 </aside>
 
         <p class="phpdocumentor-summary">Encrypts data.</p>
@@ -3904,7 +3918,7 @@ See <a href="https://tools.ietf.org/html/rfc5869#section-3.2">RFC 5869 Section 3
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">698</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates a salt that can be used to generate a password hash.</p>
@@ -3950,6 +3964,52 @@ from the alphabet &quot;./0-9A-Za-z&quot;.</p></section>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
             <section class="phpdocumentor-description"><p>the random salt value.</p></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_shouldUseLibreSSL">
+        shouldUseLibreSSL()
+        <a href="#method_shouldUseLibreSSL" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">106</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">shouldUseLibreSSL</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>if LibreSSL should be used
+Use version is 2.1.5 or higher.</p></section>
 
     
 </article>
@@ -4004,6 +4064,38 @@ will be detached first.</p></section>
     <span class="phpdocumentor-signature__response_type"><a href="../classes/yii-base-Behavior.html"><abbr title="\yii\base\Behavior">Behavior</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>the attached behavior.</p></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isWindows">
+        isWindows()
+        <a href="#method_isWindows" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Security.php"><a href="../files/vendor-yiisoft-yii2-base-security.html"><abbr title="vendor/yiisoft/yii2/base/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">122</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">isWindows</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>if operating system is Windows</p></section>
 
     
 </article>

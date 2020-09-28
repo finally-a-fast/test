@@ -886,6 +886,11 @@ Search.appendIndex(
             "summary": "",
             "url": "../classes/yii-base-Controller.html#method___construct"
         },                {
+            "fqsen": "\\yii\\base\\Controller\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "../classes/yii-base-Controller.html#method_init"
+        },                {
             "fqsen": "\\yii\\base\\Controller\u003A\u003Aactions\u0028\u0029",
             "name": "actions",
             "summary": "Declares\u0020external\u0020actions\u0020for\u0020the\u0020controller.",
@@ -981,6 +986,11 @@ Search.appendIndex(
             "summary": "Finds\u0020the\u0020applicable\u0020layout\u0020file.",
             "url": "../classes/yii-base-Controller.html#method_findLayoutFile"
         },                {
+            "fqsen": "\\yii\\base\\Controller\u003A\u003AbindInjectedParams\u0028\u0029",
+            "name": "bindInjectedParams",
+            "summary": "Fills\u0020parameters\u0020based\u0020on\u0020types\u0020and\u0020names\u0020in\u0020action\u0020method\u0020signature.",
+            "url": "../classes/yii-base-Controller.html#method_bindInjectedParams"
+        },                {
             "fqsen": "\\yii\\base\\Controller\u003A\u003AEVENT_BEFORE_ACTION",
             "name": "EVENT_BEFORE_ACTION",
             "summary": "",
@@ -1015,6 +1025,16 @@ Search.appendIndex(
             "name": "action",
             "summary": "",
             "url": "../classes/yii-base-Controller.html#property_action"
+        },                {
+            "fqsen": "\\yii\\base\\Controller\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "",
+            "url": "../classes/yii-base-Controller.html#property_request"
+        },                {
+            "fqsen": "\\yii\\base\\Controller\u003A\u003A\u0024response",
+            "name": "response",
+            "summary": "",
+            "url": "../classes/yii-base-Controller.html#property_response"
         },                {
             "fqsen": "\\yii\\base\\Controller\u003A\u003A\u0024_view",
             "name": "_view",
@@ -1206,6 +1226,11 @@ Search.appendIndex(
             "summary": "ErrorHandler\u0020handles\u0020uncaught\u0020PHP\u0020errors\u0020and\u0020exceptions.",
             "url": "../classes/yii-base-ErrorHandler.html"
         },                {
+            "fqsen": "\\yii\\base\\ErrorHandler\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "../classes/yii-base-ErrorHandler.html#method_init"
+        },                {
             "fqsen": "\\yii\\base\\ErrorHandler\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Register\u0020this\u0020error\u0020handler.",
@@ -1285,6 +1310,11 @@ Search.appendIndex(
             "name": "exception",
             "summary": "",
             "url": "../classes/yii-base-ErrorHandler.html#property_exception"
+        },                {
+            "fqsen": "\\yii\\base\\ErrorHandler\u003A\u003A\u0024silentExitOnException",
+            "name": "silentExitOnException",
+            "summary": "",
+            "url": "../classes/yii-base-ErrorHandler.html#property_silentExitOnException"
         },                {
             "fqsen": "\\yii\\base\\ErrorHandler\u003A\u003A\u0024_memoryReserve",
             "name": "_memoryReserve",
@@ -2020,6 +2050,16 @@ Search.appendIndex(
             "name": "Security",
             "summary": "Security\u0020provides\u0020a\u0020set\u0020of\u0020methods\u0020to\u0020handle\u0020common\u0020security\u002Drelated\u0020tasks.",
             "url": "../classes/yii-base-Security.html"
+        },                {
+            "fqsen": "\\yii\\base\\Security\u003A\u003AshouldUseLibreSSL\u0028\u0029",
+            "name": "shouldUseLibreSSL",
+            "summary": "",
+            "url": "../classes/yii-base-Security.html#method_shouldUseLibreSSL"
+        },                {
+            "fqsen": "\\yii\\base\\Security\u003A\u003AisWindows\u0028\u0029",
+            "name": "isWindows",
+            "summary": "",
+            "url": "../classes/yii-base-Security.html#method_isWindows"
         },                {
             "fqsen": "\\yii\\base\\Security\u003A\u003AencryptByPassword\u0028\u0029",
             "name": "encryptByPassword",
@@ -4556,6 +4596,11 @@ Search.appendIndex(
             "summary": "Controller\u0020is\u0020the\u0020base\u0020class\u0020of\u0020console\u0020command\u0020classes.",
             "url": "../classes/yii-console-Controller.html"
         },                {
+            "fqsen": "\\yii\\console\\Controller\u003A\u003AbeforeAction\u0028\u0029",
+            "name": "beforeAction",
+            "summary": "This\u0020method\u0020is\u0020invoked\u0020right\u0020before\u0020an\u0020action\u0020is\u0020executed.",
+            "url": "../classes/yii-console-Controller.html#method_beforeAction"
+        },                {
             "fqsen": "\\yii\\console\\Controller\u003A\u003AisColorEnabled\u0028\u0029",
             "name": "isColorEnabled",
             "summary": "Returns\u0020a\u0020value\u0020indicating\u0020whether\u0020ANSI\u0020color\u0020is\u0020enabled.",
@@ -4700,6 +4745,11 @@ Search.appendIndex(
             "name": "help",
             "summary": "",
             "url": "../classes/yii-console-Controller.html#property_help"
+        },                {
+            "fqsen": "\\yii\\console\\Controller\u003A\u003A\u0024silentExitOnException",
+            "name": "silentExitOnException",
+            "summary": "",
+            "url": "../classes/yii-console-Controller.html#property_silentExitOnException"
         },                {
             "fqsen": "\\yii\\console\\Controller\u003A\u003A\u0024_passedOptions",
             "name": "_passedOptions",
@@ -8041,6 +8091,11 @@ Search.appendIndex(
             "summary": "Gets\u0020db\u0020driver\u0020name\u0020from\u0020the\u0020db\u0020connection\u0020that\u0020is\u0020passed\u0020to\u0020the\u0020\u0060batch\u0028\u0029\u0060,\u0020if\u0020it\u0020is\u0020not\u0020passed\u0020it\u0020uses\nconnection\u0020from\u0020the\u0020active\u0020record\u0020model",
             "url": "../classes/yii-db-BatchQueryResult.html#method_getDbDriverName"
         },                {
+            "fqsen": "\\yii\\db\\BatchQueryResult\u003A\u003A__wakeup\u0028\u0029",
+            "name": "__wakeup",
+            "summary": "Unserialization\u0020is\u0020disabled\u0020to\u0020prevent\u0020remote\u0020code\u0020execution\u0020in\u0020case\u0020application\ncalls\u0020unserialize\u0028\u0029\u0020on\u0020user\u0020input\u0020containing\u0020specially\u0020crafted\u0020string.",
+            "url": "../classes/yii-db-BatchQueryResult.html#method___wakeup"
+        },                {
             "fqsen": "\\yii\\db\\BatchQueryResult\u003A\u003A\u0024db",
             "name": "db",
             "summary": "",
@@ -9631,6 +9686,11 @@ Search.appendIndex(
             "summary": "",
             "url": "../classes/yii-db-Connection.html#property_enableProfiling"
         },                {
+            "fqsen": "\\yii\\db\\Connection\u003A\u003A\u0024isSybase",
+            "name": "isSybase",
+            "summary": "",
+            "url": "../classes/yii-db-Connection.html#property_isSybase"
+        },                {
             "fqsen": "\\yii\\db\\Connection\u003A\u003A\u0024_transaction",
             "name": "_transaction",
             "summary": "",
@@ -10763,7 +10823,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\yii\\db\\mssql\\QueryBuilder\u003A\u003Ainsert\u0028\u0029",
             "name": "insert",
-            "summary": "Creates\u0020an\u0020INSERT\u0020SQL\u0020statement.",
+            "summary": "\u007B\u0040inheritdoc\u007D\nAdded\u0020OUTPUT\u0020construction\u0020for\u0020getting\u0020inserted\u0020data\u0020\u0028for\u0020SQL\u0020Server\u00202005\u0020or\u0020later\u0029\nOUTPUT\u0020clause\u0020\u002D\u0020The\u0020OUTPUT\u0020clause\u0020is\u0020new\u0020to\u0020SQL\u0020Server\u00202005\u0020and\u0020has\u0020the\u0020ability\u0020to\u0020access\nthe\u0020INSERTED\u0020and\u0020DELETED\u0020tables\u0020as\u0020is\u0020the\u0020case\u0020with\u0020a\u0020trigger.",
             "url": "../classes/yii-db-mssql-QueryBuilder.html#method_insert"
         },                {
             "fqsen": "\\yii\\db\\mssql\\QueryBuilder\u003A\u003Aupsert\u0028\u0029",
@@ -10785,6 +10845,16 @@ Search.appendIndex(
             "name": "extractAlias",
             "summary": "Extracts\u0020table\u0020alias\u0020if\u0020there\u0020is\u0020one\u0020or\u0020returns\u0020false",
             "url": "../classes/yii-db-mssql-QueryBuilder.html#method_extractAlias"
+        },                {
+            "fqsen": "\\yii\\db\\mssql\\QueryBuilder\u003A\u003AdropConstraintsForColumn\u0028\u0029",
+            "name": "dropConstraintsForColumn",
+            "summary": "Builds\u0020a\u0020SQL\u0020statement\u0020for\u0020dropping\u0020constraints\u0020for\u0020column\u0020of\u0020table.",
+            "url": "../classes/yii-db-mssql-QueryBuilder.html#method_dropConstraintsForColumn"
+        },                {
+            "fqsen": "\\yii\\db\\mssql\\QueryBuilder\u003A\u003AdropColumn\u0028\u0029",
+            "name": "dropColumn",
+            "summary": "Drop\u0020all\u0020constraints\u0020before\u0020column\u0020delete\n\u007B\u0040inheritdoc\u007D",
+            "url": "../classes/yii-db-mssql-QueryBuilder.html#method_dropColumn"
         },                {
             "fqsen": "\\yii\\db\\mssql\\QueryBuilder\u003A\u003A\u0024typeMap",
             "name": "typeMap",
@@ -10920,6 +10990,11 @@ Search.appendIndex(
             "name": "quoteColumnName",
             "summary": "Quotes\u0020a\u0020column\u0020name\u0020for\u0020use\u0020in\u0020a\u0020query.",
             "url": "../classes/yii-db-mssql-Schema.html#method_quoteColumnName"
+        },                {
+            "fqsen": "\\yii\\db\\mssql\\Schema\u003A\u003Ainsert\u0028\u0029",
+            "name": "insert",
+            "summary": "Retrieving\u0020inserted\u0020data\u0020from\u0020a\u0020primary\u0020key\u0020request\u0020of\u0020type\u0020uniqueidentifier\u0020\u0028for\u0020SQL\u0020Server\u00202005\u0020or\u0020later\u0029\n\u007B\u0040inheritdoc\u007D",
+            "url": "../classes/yii-db-mssql-Schema.html#method_insert"
         },                {
             "fqsen": "\\yii\\db\\mssql\\Schema\u003A\u003A\u0024columnSchemaClass",
             "name": "columnSchemaClass",
@@ -14226,6 +14301,11 @@ Search.appendIndex(
             "summary": "Registers\u0020class\u0020definitions\u0020as\u0020singletons\u0020within\u0020this\u0020container\u0020by\u0020calling\u0020\u005B\u005BsetSingleton\u0028\u0029\u005D\u005D.",
             "url": "../classes/yii-di-Container.html#method_setSingletons"
         },                {
+            "fqsen": "\\yii\\di\\Container\u003A\u003AsetResolveArrays\u0028\u0029",
+            "name": "setResolveArrays",
+            "summary": "",
+            "url": "../classes/yii-di-Container.html#method_setResolveArrays"
+        },                {
             "fqsen": "\\yii\\di\\Container\u003A\u003A\u0024_singletons",
             "name": "_singletons",
             "summary": "",
@@ -14250,6 +14330,11 @@ Search.appendIndex(
             "name": "_dependencies",
             "summary": "",
             "url": "../classes/yii-di-Container.html#property__dependencies"
+        },                {
+            "fqsen": "\\yii\\di\\Container\u003A\u003A\u0024_resolveArrays",
+            "name": "_resolveArrays",
+            "summary": "",
+            "url": "../classes/yii-di-Container.html#property__resolveArrays"
         },                {
             "fqsen": "\\yii\\di\\Instance",
             "name": "Instance",
@@ -15763,17 +15848,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\yii\\helpers\\BaseArrayHelper\u003A\u003AisIn\u0028\u0029",
             "name": "isIn",
-            "summary": "Check\u0020whether\u0020an\u0020array\u0020or\u0020\u005B\u005B\\Traversable\u005D\u005D\u0020contains\u0020an\u0020element.",
+            "summary": "Check\u0020whether\u0020an\u0020array\u0020or\u0020\u005B\u005BTraversable\u005D\u005D\u0020contains\u0020an\u0020element.",
             "url": "../classes/yii-helpers-BaseArrayHelper.html#method_isIn"
         },                {
             "fqsen": "\\yii\\helpers\\BaseArrayHelper\u003A\u003AisTraversable\u0028\u0029",
             "name": "isTraversable",
-            "summary": "Checks\u0020whether\u0020a\u0020variable\u0020is\u0020an\u0020array\u0020or\u0020\u005B\u005B\\Traversable\u005D\u005D.",
+            "summary": "Checks\u0020whether\u0020a\u0020variable\u0020is\u0020an\u0020array\u0020or\u0020\u005B\u005BTraversable\u005D\u005D.",
             "url": "../classes/yii-helpers-BaseArrayHelper.html#method_isTraversable"
         },                {
             "fqsen": "\\yii\\helpers\\BaseArrayHelper\u003A\u003AisSubset\u0028\u0029",
             "name": "isSubset",
-            "summary": "Checks\u0020whether\u0020an\u0020array\u0020or\u0020\u005B\u005B\\Traversable\u005D\u005D\u0020is\u0020a\u0020subset\u0020of\u0020another\u0020array\u0020or\u0020\u005B\u005B\\Traversable\u005D\u005D.",
+            "summary": "Checks\u0020whether\u0020an\u0020array\u0020or\u0020\u005B\u005BTraversable\u005D\u005D\u0020is\u0020a\u0020subset\u0020of\u0020another\u0020array\u0020or\u0020\u005B\u005BTraversable\u005D\u005D.",
             "url": "../classes/yii-helpers-BaseArrayHelper.html#method_isSubset"
         },                {
             "fqsen": "\\yii\\helpers\\BaseArrayHelper\u003A\u003Afilter\u0028\u0029",
@@ -15920,6 +16005,11 @@ Search.appendIndex(
             "name": "ansiStrlen",
             "summary": "Returns\u0020the\u0020length\u0020of\u0020the\u0020string\u0020without\u0020ANSI\u0020color\u0020codes.",
             "url": "../classes/yii-helpers-BaseConsole.html#method_ansiStrlen"
+        },                {
+            "fqsen": "\\yii\\helpers\\BaseConsole\u003A\u003AansiStrwidth\u0028\u0029",
+            "name": "ansiStrwidth",
+            "summary": "Returns\u0020the\u0020width\u0020of\u0020the\u0020string\u0020without\u0020ANSI\u0020color\u0020codes.",
+            "url": "../classes/yii-helpers-BaseConsole.html#method_ansiStrwidth"
         },                {
             "fqsen": "\\yii\\helpers\\BaseConsole\u003A\u003AansiToHtml\u0028\u0029",
             "name": "ansiToHtml",
@@ -19071,6 +19161,11 @@ Search.appendIndex(
             "summary": "Releases\u0020acquired\u0020lock.\u0020This\u0020method\u0020will\u0020return\u0020false\u0020in\u0020case\u0020the\u0020lock\u0020was\u0020not\u0020found.",
             "url": "../classes/yii-mutex-Mutex.html#method_release"
         },                {
+            "fqsen": "\\yii\\mutex\\Mutex\u003A\u003AisAcquired\u0028\u0029",
+            "name": "isAcquired",
+            "summary": "Checks\u0020if\u0020a\u0020lock\u0020is\u0020currently\u0020acquired",
+            "url": "../classes/yii-mutex-Mutex.html#method_isAcquired"
+        },                {
             "fqsen": "\\yii\\mutex\\Mutex\u003A\u003AacquireLock\u0028\u0029",
             "name": "acquireLock",
             "summary": "This\u0020method\u0020should\u0020be\u0020extended\u0020by\u0020a\u0020concrete\u0020Mutex\u0020implementations.\u0020Acquires\u0020lock\u0020by\u0020name.",
@@ -19636,10 +19731,10 @@ Search.appendIndex(
             "summary": "",
             "url": "../classes/yii-rbac-DbManager.html#property_parents"
         },                {
-            "fqsen": "\\yii\\rbac\\DbManager\u003A\u003A\u0024_checkAccessAssignments",
-            "name": "_checkAccessAssignments",
+            "fqsen": "\\yii\\rbac\\DbManager\u003A\u003A\u0024checkAccessAssignments",
+            "name": "checkAccessAssignments",
             "summary": "",
-            "url": "../classes/yii-rbac-DbManager.html#property__checkAccessAssignments"
+            "url": "../classes/yii-rbac-DbManager.html#property_checkAccessAssignments"
         },                {
             "fqsen": "\\yii\\rbac\\Item",
             "name": "Item",
@@ -21326,11 +21421,6 @@ Search.appendIndex(
             "summary": "\u007B\u0040inheritdoc\u007D",
             "url": "../classes/yii-validators-EachValidator.html#method_init"
         },                {
-            "fqsen": "\\yii\\validators\\EachValidator\u003A\u003AgetValidator\u0028\u0029",
-            "name": "getValidator",
-            "summary": "Returns\u0020the\u0020validator\u0020declared\u0020in\u0020\u005B\u005Brule\u005D\u005D.",
-            "url": "../classes/yii-validators-EachValidator.html#method_getValidator"
-        },                {
             "fqsen": "\\yii\\validators\\EachValidator\u003A\u003AcreateEmbeddedValidator\u0028\u0029",
             "name": "createEmbeddedValidator",
             "summary": "Creates\u0020validator\u0020object\u0020based\u0020on\u0020the\u0020validation\u0020rule\u0020specified\u0020in\u0020\u005B\u005Brule\u005D\u005D.",
@@ -21360,11 +21450,6 @@ Search.appendIndex(
             "name": "stopOnFirstError",
             "summary": "",
             "url": "../classes/yii-validators-EachValidator.html#property_stopOnFirstError"
-        },                {
-            "fqsen": "\\yii\\validators\\EachValidator\u003A\u003A\u0024_validator",
-            "name": "_validator",
-            "summary": "",
-            "url": "../classes/yii-validators-EachValidator.html#property__validator"
         },                {
             "fqsen": "\\yii\\validators\\EmailValidator",
             "name": "EmailValidator",
@@ -21815,6 +21900,11 @@ Search.appendIndex(
             "name": "clientValidate",
             "summary": "",
             "url": "../classes/yii-validators-InlineValidator.html#property_clientValidate"
+        },                {
+            "fqsen": "\\yii\\validators\\InlineValidator\u003A\u003A\u0024current",
+            "name": "current",
+            "summary": "",
+            "url": "../classes/yii-validators-InlineValidator.html#property_current"
         },                {
             "fqsen": "\\yii\\validators\\IpValidator",
             "name": "IpValidator",
@@ -23228,7 +23318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\yii\\web\\DbSession\u003A\u003AregenerateID\u0028\u0029",
             "name": "regenerateID",
-            "summary": "Updates\u0020the\u0020current\u0020session\u0020ID\u0020with\u0020a\u0020newly\u0020generated\u0020one\u0020.",
+            "summary": "\u007B\u0040inheritdoc\u007D",
             "url": "../classes/yii-web-DbSession.html#method_regenerateID"
         },                {
             "fqsen": "\\yii\\web\\DbSession\u003A\u003Aclose\u0028\u0029",
@@ -27983,7 +28073,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\yii\\queue\\cli\\Command\u003A\u003AbeforeAction\u0028\u0029",
             "name": "beforeAction",
-            "summary": "",
+            "summary": "This\u0020method\u0020is\u0020invoked\u0020right\u0020before\u0020an\u0020action\u0020is\u0020executed.",
             "url": "../classes/yii-queue-cli-Command.html#method_beforeAction"
         },                {
             "fqsen": "\\yii\\queue\\cli\\Command\u003A\u003AhandleMessage\u0028\u0029",

@@ -322,9 +322,30 @@ See [[options()]] for details.</p></section>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/yii-base-Controller.html#property_request">$request</a>
+    <span>
+                &nbsp;: <a href="../classes/yii-base-Request.html"><abbr title="\yii\base\Request">Request</abbr></a>|array|string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/yii-base-Controller.html#property_response">$response</a>
+    <span>
+                &nbsp;: <a href="../classes/yii-base-Response.html"><abbr title="\yii\base\Response">Response</abbr></a>|array|string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/yii-base-Controller.html#property_route">$route</a>
     <span>
                 &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/yii-console-Controller.html#property_silentExitOnException">$silentExitOnException</a>
+    <span>
+                &nbsp;: bool            </span>
 </dt>
 <dd></dd>
 
@@ -872,6 +893,13 @@ a list of options to choose from and their explanations.</dd>
 <dd>Triggers an event.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/yii-base-Controller.html#method_bindInjectedParams">bindInjectedParams()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Fills parameters based on types and names in action method signature.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/yii-queue-cli-Command.html#method_canIsolate">canIsolate()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -953,7 +981,7 @@ a list of options to choose from and their explanations.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
     
@@ -991,7 +1019,7 @@ a list of options to choose from and their explanations.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
     
@@ -1173,7 +1201,7 @@ You may set [[ActionEvent::isValid]] to be false to cancel the action execution.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
     
@@ -1399,7 +1427,7 @@ You may set [[ActionEvent::isValid]] to be false to cancel the action execution.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
     
@@ -1489,7 +1517,7 @@ You may set [[ActionEvent::isValid]] to be false to cancel the action execution.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
     
@@ -1519,7 +1547,7 @@ You may set [[ActionEvent::isValid]] to be false to cancel the action execution.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 </aside>
 
     
@@ -1709,6 +1737,92 @@ read-only.</p></section>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_request">
+        $request
+        <a href="#property_request" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">72</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="../classes/yii-base-Request.html"><abbr title="\yii\base\Request">Request</abbr></a>|array|string</span>
+    <span class="phpdocumentor-signature__name">$request</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;request&#039;</span></code>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_response">
+        $response
+        <a href="#property_response" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">77</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="../classes/yii-base-Response.html"><abbr title="\yii\base\Response">Response</abbr></a>|array|string</span>
+    <span class="phpdocumentor-signature__name">$response</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;response&#039;</span></code>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_route">
         $route
         <a href="#property_route" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1732,6 +1846,49 @@ read-only.</p></section>
 property is read-only.</p></section>
 
     
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_silentExitOnException">
+        $silentExitOnException
+        <a href="#property_silentExitOnException" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">72</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$silentExitOnException</span>
+    </code>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -2020,7 +2177,7 @@ read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
     
@@ -2050,7 +2207,7 @@ read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">613</span>
+    <span class="phpdocumentor-element-found-in__line">650</span>
 </aside>
 
     
@@ -2080,7 +2237,7 @@ read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
     
@@ -2110,7 +2267,7 @@ read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
     
@@ -2783,7 +2940,7 @@ If the property is read-only, it will throw an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">301</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 </aside>
 
         <p class="phpdocumentor-summary">This method is invoked right after an action is executed.</p>
@@ -2844,7 +3001,7 @@ will be used as the action return value.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Formats a string with ANSI codes.</p>
@@ -3021,7 +3178,7 @@ a string specifying the behavior class, or an configuration array for creating t
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 </aside>
 
         <p class="phpdocumentor-summary">This method is invoked right before an action is executed.</p>
@@ -3129,7 +3286,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Binds the parameters to the action.</p>
@@ -3370,7 +3527,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">376</span>
 </aside>
 
         <p class="phpdocumentor-summary">Asks user to confirm by typing y or n.</p>
@@ -3429,7 +3586,7 @@ Will return true if [[interactive]] is false.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates an action based on the given action ID.</p>
@@ -3587,7 +3744,7 @@ method will be created and returned.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">490</span>
+    <span class="phpdocumentor-element-found-in__line">513</span>
 </aside>
 
         <p class="phpdocumentor-summary">Finds the applicable layout file.</p>
@@ -3646,7 +3803,7 @@ Please refer to [[render()]] on how to specify this parameter.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">506</span>
+    <span class="phpdocumentor-element-found-in__line">543</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the help information for the anonymous arguments for the action.</p>
@@ -3699,7 +3856,7 @@ the parameters corresponding to the action method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">521</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the detailed help information for the specified action.</p>
@@ -3743,7 +3900,7 @@ the parameters corresponding to the action method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a one-line short summary describing the specified action.</p>
@@ -3787,7 +3944,7 @@ the parameters corresponding to the action method.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">564</span>
+    <span class="phpdocumentor-element-found-in__line">601</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the help information for the options for the action.</p>
@@ -3916,7 +4073,7 @@ the properties corresponding to the action options.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">460</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns help information for this controller.</p>
@@ -3950,7 +4107,7 @@ The default implementation returns help information retrieved from the PHPDoc co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">448</span>
+    <span class="phpdocumentor-element-found-in__line">485</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns one-line short summary describing this controller.</p>
@@ -3984,7 +4141,7 @@ The default implementation returns first line from the PHPDoc comment.</p></sect
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all ancestor modules of this controller.</p>
@@ -4019,7 +4176,7 @@ while the last is the innermost one.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">441</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns properties corresponding to the options for the action id
@@ -4064,7 +4221,7 @@ Child classes may override this method to specify possible properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">420</span>
+    <span class="phpdocumentor-element-found-in__line">457</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the names of valid options passed during execution.</p>
@@ -4097,7 +4254,7 @@ Child classes may override this method to specify possible properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the properties corresponding to the passed options.</p>
@@ -4130,7 +4287,7 @@ Child classes may override this method to specify possible properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the route of the current request.</p>
@@ -4163,7 +4320,7 @@ Child classes may override this method to specify possible properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the unique ID of the controller.</p>
@@ -4196,7 +4353,7 @@ Child classes may override this method to specify possible properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">462</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the view object that can be used to render views or view files.</p>
@@ -4232,7 +4389,7 @@ If not set, it will default to the &quot;view&quot; application component.</p></
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">486</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the directory containing view files for this controller.</p>
@@ -4469,7 +4626,7 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a value indicating whether ANSI color is enabled.</p>
@@ -4680,7 +4837,7 @@ handler list.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">390</span>
+    <span class="phpdocumentor-element-found-in__line">427</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns option alias names.</p>
@@ -4735,7 +4892,7 @@ where the keys is alias name for option and value is option name.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">374</span>
+    <span class="phpdocumentor-element-found-in__line">411</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the names of valid options for the action (id)
@@ -4784,7 +4941,7 @@ until [[beforeAction()]] is being called.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">349</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prompts the user for input and validates it.</p>
@@ -4854,7 +5011,7 @@ until [[beforeAction()]] is being called.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">384</span>
+    <span class="phpdocumentor-element-found-in__line">407</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders a view and applies layout if available.</p>
@@ -4953,7 +5110,7 @@ These parameters will not be available in the layout.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders a static string by applying a layout.</p>
@@ -5011,7 +5168,7 @@ If the layout is disabled, the string will be returned back.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders a view file.</p>
@@ -5077,7 +5234,7 @@ If the layout is disabled, the string will be returned back.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">415</span>
+    <span class="phpdocumentor-element-found-in__line">438</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders a view without applying layout.</p>
@@ -5144,7 +5301,7 @@ If the layout is disabled, the string will be returned back.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">208</span>
 </aside>
 
         <p class="phpdocumentor-summary">Runs a request specified in terms of a route.</p>
@@ -5212,7 +5369,7 @@ the route will start from the application; otherwise, it will start from the par
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 </aside>
 
         <p class="phpdocumentor-summary">Runs an action within this controller with the specified action ID and parameters.</p>
@@ -5286,7 +5443,7 @@ the route will start from the application; otherwise, it will start from the par
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">357</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gives the user an option to choose from. Giving &#039;?&#039; as an input will show
@@ -5339,7 +5496,7 @@ a list of options to choose from and their explanations.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the view object to be used by this controller.</p>
@@ -5382,7 +5539,7 @@ a list of options to choose from and their explanations.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the directory that contains the view files.</p>
@@ -5446,7 +5603,7 @@ a list of options to choose from and their explanations.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prints a string to STDERR.</p>
@@ -5494,7 +5651,7 @@ passing additional parameters using the constants defined in [[\yii\helpers\Cons
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prints a string to STDOUT.</p>
@@ -5575,6 +5732,111 @@ all attached handlers for the event including class-level handlers.</p></section
             </dl>
 
     
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                -final        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bindInjectedParams">
+        bindInjectedParams()
+        <a href="#method_bindInjectedParams" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/Controller.php"><a href="../files/vendor-yiisoft-yii2-base-controller.html"><abbr title="vendor/yiisoft/yii2/base/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">562</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fills parameters based on types and names in action method signature.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__final">final</span>        <span class="phpdocumentor-signature__name">bindInjectedParams</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\ReflectionType">ReflectionType</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$requestedParams</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$type</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\ReflectionType">ReflectionType</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The reflected type of the action parameter.</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the parameter.</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The array of arguments for the action, this function may append items to it.</p></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$requestedParams</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The array with requested params, this function may write specific keys to it.</p></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="../classes/yii-base-ErrorException.html"><abbr title="\yii\base\ErrorException">ErrorException</abbr></a></span>
+                                                                                    <section class="phpdocumentor-description"><p>when we cannot load a required service.</p></section>
+
+                </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="../classes/yii-base-InvalidConfigException.html"><abbr title="\yii\base\InvalidConfigException">InvalidConfigException</abbr></a></span>
+                                                                                    <section class="phpdocumentor-description"><p>Thrown when there is an error in the DI configuration.</p></section>
+
+                </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="../classes/yii-di-NotInstantiableException.html"><abbr title="\yii\di\NotInstantiableException">NotInstantiableException</abbr></a></span>
+                                                                                    <section class="phpdocumentor-description"><p>Thrown when a definition cannot be resolved to a concrete class
+(for example an interface type hint) without a proper definition in the container.</p></section>
+
+                </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -5677,7 +5939,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">619</span>
+    <span class="phpdocumentor-element-found-in__line">656</span>
 </aside>
 
     
@@ -5856,7 +6118,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">681</span>
+    <span class="phpdocumentor-element-found-in__line">718</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns full description from the docblock.</p>
@@ -5898,7 +6160,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">665</span>
+    <span class="phpdocumentor-element-found-in__line">702</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the first line of docblock.</p>
@@ -5940,7 +6202,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/console/Controller.php"><a href="../files/vendor-yiisoft-yii2-console-controller.html"><abbr title="vendor/yiisoft/yii2/console/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">637</span>
+    <span class="phpdocumentor-element-found-in__line">674</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses the comment block into tags.</p>

@@ -121,7 +121,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
             <p class="phpdocumentor-summary">DbSession extends [[Session]] by using database as session data storage.</p>
@@ -757,7 +757,7 @@ Refer to [[MultiFieldSession]] for more details.</p></section>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Updates the current session ID with a newly generated one .</dd>
+<dd>{@inheritdoc}</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-web-Session.html#method_remove">remove()</a>
@@ -1125,7 +1125,7 @@ is read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
     
@@ -1497,7 +1497,7 @@ read-only.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
     
@@ -1714,7 +1714,7 @@ false.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
     
@@ -2861,7 +2861,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ends the current session and store session data.</p>
@@ -4191,7 +4191,7 @@ You may override this method when you implemented the php magic method <code cla
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initializes the DbSession component.</p>
@@ -4616,26 +4616,24 @@ handler list.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Updates the current session ID with a newly generated one .</p>
+        <p class="phpdocumentor-summary">{@inheritdoc}</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">regenerateID</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deleteOldSession</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">regenerateID</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deleteOldSession</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>Please refer to <a href="https://secure.php.net/session_regenerate_id">https://secure.php.net/session_regenerate_id</a> for more details.</p></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$deleteOldSession</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Whether to delete the old associated session file or not.</p></section>
-
+                
             </dd>
             </dl>
 
@@ -5780,7 +5778,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/web/DbSession.php"><a href="../files/vendor-yiisoft-yii2-web-dbsession.html"><abbr title="vendor/yiisoft/yii2/web/DbSession.php">DbSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">255</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 </aside>
 
         <p class="phpdocumentor-summary">Method typecasts $fields before passing them to PDO.</p>

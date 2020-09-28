@@ -205,6 +205,13 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/yii-base-ErrorHandler.html#property_silentExitOnException">$silentExitOnException</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="../classes/yii-base-Component.html#property__behaviors">$_behaviors</a>
     <span>
@@ -451,11 +458,11 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
 <dd>Returns a value indicating whether a property is defined.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/yii-base-BaseObject.html#method_init">init()</a>
+    <a href="../classes/yii-base-ErrorHandler.html#method_init">init()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Initializes the object.</dd>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-base-ErrorHandler.html#method_logException">logException()</a>
@@ -657,6 +664,49 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
         class="
             phpdocumentor-element
             -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_silentExitOnException">
+        $silentExitOnException
+        <a href="#property_silentExitOnException" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$silentExitOnException</span>
+    </code>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">2.0.36</span>
+                                                                                                    
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
             -private
                                                         "
 >
@@ -772,7 +822,7 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
 
     
@@ -802,7 +852,7 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 </aside>
 
     
@@ -832,7 +882,7 @@ You can access that instance via <code class="prettyprint">Yii::$app-&gt;errorHa
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
     
@@ -1670,7 +1720,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 </aside>
 
         <p class="phpdocumentor-summary">Removes all output echoed before calling this method.</p>
@@ -1702,7 +1752,7 @@ or be detached using [[detachBehavior()]]. Anonymous behaviors can not be retrie
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">341</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an exception into a PHP error.</p>
@@ -1747,7 +1797,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an exception into a simple string.</p>
@@ -1791,7 +1841,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">359</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an exception into a string that has verbose information about the exception and its trace.</p>
@@ -2034,7 +2084,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles PHP execution errors such as warnings and notices.</p>
@@ -2116,7 +2166,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles uncaught PHP exceptions.</p>
@@ -2160,7 +2210,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles fatal PHP errors.</p>
@@ -2192,7 +2242,7 @@ to PHP errors because exceptions cannot be thrown inside of them.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles HHVM execution errors such as warnings and notices.</p>
@@ -2463,20 +2513,17 @@ You may override this method when you implemented the php magic method <code cla
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/BaseObject.php"><a href="../files/vendor-yiisoft-yii2-base-baseobject.html"><abbr title="vendor/yiisoft/yii2/base/BaseObject.php">BaseObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Initializes the object.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">init</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>This method is invoked at the end of the constructor after the object is initialized with the
-given configuration.</p></section>
-
+    
     
     
 
@@ -2499,7 +2546,7 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">310</span>
 </aside>
 
         <p class="phpdocumentor-summary">Logs the given exception.</p>
@@ -2721,7 +2768,7 @@ handler list.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register this error handler.</p>
@@ -2820,7 +2867,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unregisters this error handler by restoring the PHP error and exception handlers.</p>
@@ -2866,7 +2913,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles exception thrown during exception processing in [[handleException()]].</p>
@@ -2930,7 +2977,7 @@ all attached handlers for the event including class-level handlers.</p></section
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/base/ErrorHandler.php"><a href="../files/vendor-yiisoft-yii2-base-errorhandler.html"><abbr title="vendor/yiisoft/yii2/base/ErrorHandler.php">ErrorHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">291</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders the exception.</p>

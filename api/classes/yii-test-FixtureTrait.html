@@ -583,7 +583,7 @@ the return value of [[getFixtures()]] will be used.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/test/FixtureTrait.php"><a href="../files/vendor-yiisoft-yii2-test-fixturetrait.html"><abbr title="vendor/yiisoft/yii2/test/FixtureTrait.php">FixtureTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates the specified fixture instances.</p>
@@ -592,7 +592,7 @@ the return value of [[getFixtures()]] will be used.</p></section>
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">createFixtures</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fixtures</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">\yii\test\Fixture[]</span></code>
 
-        <section class="phpdocumentor-description"><p>All dependent fixtures will also be created.</p></section>
+        <section class="phpdocumentor-description"><p>All dependent fixtures will also be created. Duplicate fixtures and circular dependencies will only be created once.</p></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -618,8 +618,7 @@ If this parameter is not provided, the fixtures specified in [[globalFixtures()]
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="../classes/yii-base-InvalidConfigException.html"><abbr title="\yii\base\InvalidConfigException">InvalidConfigException</abbr></a></span>
-                                                                                    <section class="phpdocumentor-description"><p>if fixtures are not properly configured or if a circular dependency among
-the fixtures is detected.</p></section>
+                                                                                    <section class="phpdocumentor-description"><p>if fixtures are not properly configured</p></section>
 
                 </dd>
                         </dl>

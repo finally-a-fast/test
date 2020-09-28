@@ -4868,6 +4868,7 @@ primary keys and not an empty <code class="prettyprint">WHERE</code> condition.<
 matching all of them (or an empty array if none was found). Note that <code class="prettyprint">['id' =&gt; 1, 2]</code> is treated as
 a non-associative array.
 Column names are limited to current records table columns for SQL DBMS, or filtered otherwise to be limted to simple filter conditions.</li>
+<li>a yii\db\Expression: The expression will be used directly. (@since 2.0.37)</li>
 </ul>
 <p>This method will automatically call the <code class="prettyprint">all()</code> method and return an array of [[ActiveRecordInterface|ActiveRecord]]
 instances.</p>
@@ -5018,6 +5019,7 @@ first record (or <code class="prettyprint">null</code> if not found).</li>
 <li>an associative array of name-value pairs: query by a set of attribute values and return a single record
 matching all of them (or <code class="prettyprint">null</code> if not found). Note that <code class="prettyprint">['id' =&gt; 1, 2]</code> is treated as a non-associative array.
 Column names are limited to current records table columns for SQL DBMS, or filtered otherwise to be limited to simple filter conditions.</li>
+<li>a yii\db\Expression: The expression will be used directly. (@since 2.0.37)</li>
 </ul>
 <p>That this method will automatically call the <code class="prettyprint">one()</code> method and return an [[ActiveRecordInterface|ActiveRecord]]
 instance.</p>

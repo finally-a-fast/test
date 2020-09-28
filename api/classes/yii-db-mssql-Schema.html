@@ -755,11 +755,12 @@ data format of the cache changes.</dd>
 <dd>Initializes the object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/yii-db-Schema.html#method_insert">insert()</a>
+    <a href="../classes/yii-db-mssql-Schema.html#method_insert">insert()</a>
     <span>
                         &nbsp;: array|false    </span>
 </dt>
-<dd>Executes the INSERT command, returning primary key values.</dd>
+<dd>Retrieving inserted data from a primary key request of type uniqueidentifier (for SQL Server 2005 or later)
+{@inheritdoc}</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/yii-db-Schema.html#method_isReadQuery">isReadQuery()</a>
@@ -2926,7 +2927,7 @@ If the property is read-only, it will throw an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">660</span>
+    <span class="phpdocumentor-element-found-in__line">663</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts a DB exception to a more concrete one if possible.</p>
@@ -3119,7 +3120,7 @@ If the property is read-only, it will throw an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-schema.html"><abbr title="vendor/yiisoft/yii2/db/mssql/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">617</span>
+    <span class="phpdocumentor-element-found-in__line">622</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all unique indexes for the given table.</p>
@@ -3335,7 +3336,7 @@ If the property is read-only, it will throw an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">610</span>
+    <span class="phpdocumentor-element-found-in__line">613</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the actual name of a given table name.</p>
@@ -3763,7 +3764,7 @@ Each array element is an array of [[Constraint]] or its child classes.</p></sect
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">693</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a server version as a string comparable by [[\version_compare()]].</p>
@@ -4491,23 +4492,24 @@ given configuration.</p></section>
         <a href="#method_insert" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-schema.html"><abbr title="vendor/yiisoft/yii2/db/mssql/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">429</span>
+    <span class="phpdocumentor-element-found-in__line">764</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Executes the INSERT command, returning primary key values.</p>
+        <p class="phpdocumentor-summary">Retrieving inserted data from a primary key request of type uniqueidentifier (for SQL Server 2005 or later)
+{@inheritdoc}</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">insert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$columns</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array|false</span></code>
+                <span class="phpdocumentor-signature__name">insert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$columns</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array|false</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>the table that new rows will be inserted into.</p></section>
@@ -4515,7 +4517,7 @@ given configuration.</p></section>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$columns</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>the column data (name =&gt; value) to be inserted into the table.</p></section>
@@ -4524,19 +4526,6 @@ given configuration.</p></section>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">since</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">2.0.4</span>
-                                                                                                    
-                </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array|false</span>
@@ -4558,7 +4547,7 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">682</span>
+    <span class="phpdocumentor-element-found-in__line">685</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a value indicating whether a SQL statement is for read purpose.</p>
@@ -4602,7 +4591,7 @@ given configuration.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-schema.html"><abbr title="vendor/yiisoft/yii2/db/mssql/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">746</span>
+    <span class="phpdocumentor-element-found-in__line">751</span>
 </aside>
 
         <p class="phpdocumentor-summary">Quotes a column name for use in a query.</p>
@@ -4649,7 +4638,7 @@ then this method will do nothing.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">557</span>
+    <span class="phpdocumentor-element-found-in__line">560</span>
 </aside>
 
         <p class="phpdocumentor-summary">Quotes a simple column name for use in a query.</p>
@@ -4695,7 +4684,7 @@ If the column name is already quoted or is the asterisk character '*', this meth
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">540</span>
+    <span class="phpdocumentor-element-found-in__line">543</span>
 </aside>
 
         <p class="phpdocumentor-summary">Quotes a simple table name for use in a query.</p>
@@ -5128,7 +5117,7 @@ after <code class="prettyprint">SET TRANSACTION ISOLATION LEVEL</code>.</p></sec
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">593</span>
+    <span class="phpdocumentor-element-found-in__line">596</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unquotes a simple column name.</p>
@@ -5187,7 +5176,7 @@ If the column name is not quoted or is the asterisk character '*', this method w
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">575</span>
+    <span class="phpdocumentor-element-found-in__line">578</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unquotes a simple table name.</p>
@@ -5624,7 +5613,7 @@ because the default implementation simply throws an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">706</span>
+    <span class="phpdocumentor-element-found-in__line">709</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the cache key for the specified table name.</p>
@@ -5668,7 +5657,7 @@ because the default implementation simply throws an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">721</span>
+    <span class="phpdocumentor-element-found-in__line">724</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the cache tag name.</p>
@@ -5702,7 +5691,7 @@ because the default implementation simply throws an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">626</span>
+    <span class="phpdocumentor-element-found-in__line">629</span>
 </aside>
 
         <p class="phpdocumentor-summary">Extracts the PHP type from abstract DB type.</p>
@@ -5746,7 +5735,7 @@ because the default implementation simply throws an exception.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">772</span>
+    <span class="phpdocumentor-element-found-in__line">775</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the metadata of the given type for all tables in the given schema.</p>
@@ -5822,7 +5811,7 @@ cached data may be returned if available.</p></section>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">740</span>
+    <span class="phpdocumentor-element-found-in__line">743</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the metadata of the given type for the given table.</p>
@@ -6292,7 +6281,7 @@ a <code class="prettyprint">'loadTable' . ucfirst($type)</code> named method wit
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">808</span>
+    <span class="phpdocumentor-element-found-in__line">811</span>
 </aside>
 
         <p class="phpdocumentor-summary">Changes row&#039;s array key case to lower if PDO&#039;s one is set to uppercase.</p>
@@ -6452,7 +6441,7 @@ a <code class="prettyprint">'loadTable' . ucfirst($type)</code> named method wit
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">796</span>
+    <span class="phpdocumentor-element-found-in__line">799</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the metadata of the given type for the given table.</p>
@@ -6524,7 +6513,7 @@ a <code class="prettyprint">'loadTable' . ucfirst($type)</code> named method wit
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/mssql/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-mssql-schema.html"><abbr title="vendor/yiisoft/yii2/db/mssql/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">638</span>
+    <span class="phpdocumentor-element-found-in__line">643</span>
 </aside>
 
         <p class="phpdocumentor-summary">Loads multiple types of constraints and returns the specified ones.</p>
@@ -6583,7 +6572,7 @@ a <code class="prettyprint">'loadTable' . ucfirst($type)</code> named method wit
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">828</span>
+    <span class="phpdocumentor-element-found-in__line">831</span>
 </aside>
 
         <p class="phpdocumentor-summary">Tries to load and populate table metadata from cache.</p>
@@ -6632,7 +6621,7 @@ a <code class="prettyprint">'loadTable' . ucfirst($type)</code> named method wit
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/yiisoft/yii2/db/Schema.php"><a href="../files/vendor-yiisoft-yii2-db-schema.html"><abbr title="vendor/yiisoft/yii2/db/Schema.php">Schema.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">850</span>
+    <span class="phpdocumentor-element-found-in__line">853</span>
 </aside>
 
         <p class="phpdocumentor-summary">Saves table metadata to cache.</p>
