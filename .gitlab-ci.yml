@@ -34,8 +34,7 @@ stages:
     - build
 #    - test
     - docs
-    - merge
-#    - deploy
+    - deploy
 
 build:
     stage: build
@@ -85,7 +84,7 @@ docs:
         expire_in: 1 day
 
 merge:
-    stage: merge
+    stage: deploy
     only:
         - build
     script:
@@ -107,16 +106,12 @@ merge:
         - git commit -a -m "Updated docs from pipeline ${CI_PIPELINE_ID}" || echo "No docs changes"
         - git push
 
-#deploy:
-#    stage: deploy
-#    artifacts:
-#        paths:
-#            - build/
-#    only:
-#        - master
-#    when: manual
-#    script:
-#        - echo "deployed"
+deploy:
+    stage: deploy
+    only:
+        - build
+    script:
+        - echo "deployed"
 ##    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
 ##    - ssh -p2112 faf-production@www.finally-a-fast.com "mkdir _tmp"
 ##    - scp -p2112 -r build/* faf-production@www.finally-a-fast.com:_tmp
