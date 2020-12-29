@@ -65,12 +65,12 @@ test:phpunit:php74:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../phpunit74.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: report.xml
+            junit: phpunit74.xml
 
 test:phpunit:php8:
     image: php:8.0-cli
@@ -80,12 +80,12 @@ test:phpunit:php8:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../phpunit80.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: report.xml
+            junit: phpunit80.xml
 
 test:phpstan:
     stage: test
@@ -94,8 +94,12 @@ test:phpstan:
         - build
     script:
         - cd build
-        - vendor/bin/phpstan analyse
+        - vendor/bin/phpstan analyse --error-format=junit --no-progress > phpstan.xml
     allow_failure: true
+    artifacts:
+        when: always
+        reports:
+            junit: phpstan.xml
 
 test:psalm:
     stage: test
@@ -104,8 +108,12 @@ test:psalm:
         - build
     script:
         - cd build
-        - vendor/bin/psalm
+        - vendor/bin/psalm --output-format=junit --no-progress > psalm.xml
     allow_failure: true
+    artifacts:
+        when: always
+        reports:
+            junit: psalm.xml
 
 test:phpmd:
     stage: test
@@ -124,8 +132,21 @@ test:infection:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin
+        - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin --no-progress
     allow_failure: true
+
+test:phpcs:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - cd build
+        - vendor/bin/phpcs --report=junit > phpcs.xml
+    artifacts:
+        when: always
+        reports:
+            junit: phpcs.xml
 
 docs:
     stage: docs
