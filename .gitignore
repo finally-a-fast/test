@@ -13,11 +13,17 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 
+# gitpod
+.theia
+
 # windows thumbnail cache
 Thumbs.db
 
+# Mac DS_Store Files
+.DS_Store
+
 # sass cache
-/.sass-cache
+.sass-cache
 
 # composer vendor dir
 /vendor
@@ -28,5 +34,22 @@ composer.phar
 # composer.lock in applications is ignored since it's automatically created by composer when application is installed
 composer.lock
 
-# Mac DS_Store Files
-.DS_Store
+# phpunit itself is not needed
+phpunit.phar
+
+# local infection config
+infection.json
+
+# local phpunit watcher config
+.phpunit-watcher.yml
+phpunit-watcher.yml
+
+# local phpunit config
+phpunit.xml
+
+# phpunit cache
+.phpunit.result.cache
+
+# log files
+/examples/parser.log
+infection.log

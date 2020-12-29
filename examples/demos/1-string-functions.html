@@ -1,0 +1,44 @@
+<fafte-strtolower>TEST <b>STRING</b> 123</fafte-strtolower>
+
+<fafte-strtoupper>lower string </fafte-strtoupper>
+
+<fafte-strtoupper>lower string<fafte-strtoupper>lower string </fafte-strtoupper> </fafte-strtoupper>
+<fafte-ucwords delimiters="- ">foo-bar-test and more test</fafte-ucwords>
+
+<fafte-strip-tags allowable-tags="<u>">foo <b>test</b>bar <i>abc</i>test<u>test</u></fafte-strip-tags>
+
+<fafte-trim> test  string         </fafte-trim>
+
+<fafte-nl2br> test
+    string
+
+with some breaks
+
+</fafte-nl2br>
+
+<fafte-htmlentities>
+sadaso<a>test</a>
+üßö
+</fafte-htmlentities>
+
+<fafte-html-entity-decode>
+sadaso&lt;a&gt;test&lt;/a&gt;
+&uuml;&szlig;&ouml;
+</fafte-html-entity-decode>
+
+<fafte-htmlspecialchars>
+sadaso<a>test</a>
+üßö
+</fafte-htmlspecialchars>
+
+<fafte-htmlspecialchars-decode>
+sadaso&lt;a&gt;test&lt;/a&gt;
+üßö
+</fafte-htmlspecialchars-decode>
+
+<fafte-parse>parsable-string</fafte-parse>
+
+<fafte-str-replace search="'-'" replace="' '" count="replace-count">foo-bar-tee</fafte-str-replace>
+
+<fafte-get c=".replace-count" />
+

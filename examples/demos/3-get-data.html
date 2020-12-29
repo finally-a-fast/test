@@ -1,0 +1,29 @@
+Get only one variable:
+<fafte-get data=".string" />
+
+Get multiple variables as json string:
+<fafte-get string=".string" integer=".int" format="'json'" />
+
+Get multiple variables php serialized:
+<fafte-get string=".string" integer=".int" format="'serialize'" />
+
+Get array length:
+<fafte-get data=".numeric-array.$$count" format="'json'" />
+
+Get full numeric array as json string:
+<fafte-get data=".numeric-array" format="'json'" />
+
+Get array item by index:
+<fafte-get data=".numeric-array.2" />
+
+Get full array as json string:
+<fafte-get data=".array" format="'json'" />
+
+Get array item by index:
+<fafte-get data=".array.b" />
+
+Get class item:
+<fafte-get data=".stdclass.b" />
+
+Get deep class item:
+<fafte-get data=".deep-structure.g.26.f.a" />

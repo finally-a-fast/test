@@ -1,0 +1,12 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+tasks:
+  - init: >
+      composer update
+    command: >
+      cd examples &&
+      php -S localhost:8000

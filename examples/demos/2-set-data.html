@@ -1,0 +1,27 @@
+Set string:
+<fafte-set added-string="'Added  string'" />
+
+Set number:
+<fafte-set added-number="42" />
+<fafte-set added-float="42.23" />
+
+Set bool:
+<fafte-set added-bool="t" />
+<fafte-set added-bool="true" />
+<fafte-set added-bool="false" />
+<fafte-set added-bool="f" />
+
+Copy data:
+<fafte-set added-copy=".added-string" />
+
+Full data:
+<fafte-set>
+    <fafte-param name="'added-data.1'" value="'added string 1'" />
+    <fafte-param name="'added-data.2'" value="'string 2'" />
+    <fafte-param name="'added-data.number'" value=".added-number" />
+    <fafte-param name="'added-data.float'" value=".added-float" />
+    <fafte-param name="'added-data.added-bool'" value=".added-bool" />
+</fafte-set>
+
+Read data added before:
+<fafte-get data=".added-data" format="'json'" />

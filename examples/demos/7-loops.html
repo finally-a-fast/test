@@ -1,0 +1,22 @@
+<fafte-loop each=".array" as="item">
+    <fafte-get i=".item" /><br>
+</fafte-loop>
+<br>
+<br>
+<fafte-loop>
+    <fafte-loop-each>
+        <fafte-get i=".array-name" />
+    </fafte-loop-each>
+    <fafte-loop-as>
+        <fafte-get i=".item-name" />
+    </fafte-loop-as>
+    <fafte-loop-body>
+        Index: <fafte-get i=".test.$$index" />
+        Numeric Index: <fafte-get i=".test.$$numericIndex" /><br><br>
+    </fafte-loop-body>
+</fafte-loop>
+
+
+<fafte-loop each=".numeric-array" as="item" wrap-step="6" wrap-tag="div" wrap-tag-class="row" wrap-tag-style="border:1px solid black; display: flex; margin: 20px; padding: 10px;">
+    <fafte-tag name="div" class="col" style="flex: 1;height:30px;border: 1px dashed white;" body=".item" />
+</fafte-loop>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdocumentor>
     <parser>
-        <default-package-name>Test</default-package-name>
+        <default-package-name>Template Engine</default-package-name>
         <target>docs/api</target>
         <markers>
             <item>TODO</item>
@@ -12,10 +12,9 @@
         <target>docs/api</target>
     </transformer>
     <files>
-        <directory>vendor/yiisoft/**/*</directory>
         <directory>src</directory>
         <ignore>vendor/bin</ignore>
-        <ignore>vend‌​or/composer</ignore>
+        <ignore>vendor/composer</ignore>
     </files>
     <transformations>
         <template name="clean" />

@@ -1,62 +1,76 @@
 {
-    "name": "finally-a-fast/test",
+    "name": "finally-a-fast/faftephp",
     "keywords": [
-        "test",
-        "fafcms"
+        "faftephp"
     ],
-    "type": "yii2-extension",
-    "description": "This package is just to test stuff.",
+    "type": "library",
+    "description": "Html parser.",
     "license": "MIT",
     "homepage": "https://www.finally-a-fast.com/",
     "support": {
-        "issues": "https://gitlab.com/finally-a-fast/fafcms-test/issues",
-        "source": "https://gitlab.com/finally-a-fast/fafcms-test",
-        "docs": "https://www.finally-a-fast.com/packages/fafcms-test/docs"
+        "issues": "https://gitlab.com/finally-a-fast/faftephp/issues",
+        "source": "https://gitlab.com/finally-a-fast/faftephp",
+        "docs": "https://www.finally-a-fast.com/packages/faftephp/docs"
     },
     "authors": [
         {
             "name": "Christoph Möke",
-            "email": "christophmoeke@gmail.com",
-            "role": "Project Leader"
+            "email": "cm@finally-a-fast.com"
+        },
+        {
+            "name": "Stefan Brandenburger",
+            "email": "stefanbrandenburger6@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.3",
-        "finally-a-fast/fafcms-core": "dev-master"
+        "php": "^7.4|^8.0",
+        "ext-mbstring": "*",
+        "ext-json": "*",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-intl": "*",
+        "jlawrence/eos": "^3.2",
+        "psr/log": "^1.1",
+        "psr/simple-cache": "^1.0",
+        "yiisoft/validator": "^3.0",
+        "ivopetkov/html5-dom-document-php": "^2.2"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master"
+        "phpmd/phpmd": "^2.9",
+        "phpstan/phpstan": "^0.12.58",
+        "phpunit/phpunit": "^9",
+        "roave/infection-static-analysis-plugin": "^1.6",
+        "roave/security-advisories": "dev-master",
+        "spatie/phpunit-watcher": "^1.23",
+        "squizlabs/php_codesniffer": "^3.5",
+        "vimeo/psalm": "^4.2",
+        "yiisoft/cache": "^3.0",
+        "yiisoft/cache-apcu": "^3.0",
+        "yiisoft/log": "^3.0",
+        "yiisoft/log-target-file": "^3.0"
     },
     "config": {
+        "sort-packages": true,
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
         }
     },
-    "extra": {
-        "bootstrap": "fafcms\\cookieconsent\\Bootstrap",
-        "fafcms": {
-            "name": "test",
-            "logo": "https://www.finally-a-fast.com/packages/fafcms-test/assets/logo.jpg",
-            "header": "https://www.finally-a-fast.com/packages/fafcms-test/assets/header.jpg",
-            "docs": {
-                "description": "https://www.finally-a-fast.com/packages/fafcms-test/docs/description.md",
-                "support": "https://www.finally-a-fast.com/packages/fafcms-test/docs/support.md",
-                "changelog": "https://www.finally-a-fast.com/packages/fafcms-test/docs/changelog.md",
-                "developers": "https://www.finally-a-fast.com/packages/fafcms-test/docs/developers.md"
-            }
-        }
-    },
     "scripts": {
-        "build": [
-            "touch bar.txt"
-        ]
+        "build": "",
+        "test": "phpunit --testdox --no-interaction",
+        "test-watch": "phpunit-watcher watch"
     },
     "autoload": {
         "psr-4": {
-            "fafcms\\test\\": "src"
+            "Faf\\TemplateEngine\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Faf\\TemplateEngine\\Tests\\": "tests"
         }
     },
     "repositories": [

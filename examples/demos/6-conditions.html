@@ -1,0 +1,44 @@
+<fafte-get f=".small-int"/>
+<fafte-get f=".int"/>
+
+<fafte-if>
+    <fafte-condition>
+        <fafte-condition-not-equal param-1=".small-int" param-2=".int" />
+    </fafte-condition>
+    <fafte-then>
+        a
+    </fafte-then>
+    <fafte-else>
+        b
+    </fafte-else>
+</fafte-if>
+
+<fafte-if>
+    <fafte-condition>
+        <fafte-condition-not-equal>
+            <fafte-param value=".small-int" />
+            <fafte-param value=".int" />
+        </fafte-condition-not-equal>
+    </fafte-condition>
+    <fafte-then>
+        a
+    </fafte-then>
+    <fafte-else>
+        b
+    </fafte-else>
+</fafte-if>
+
+<fafte-if>
+    <fafte-condition>
+        <fafte-condition-not-equal>
+            <fafte-param>4<fafte-get int=".small-int" /></fafte-param>
+            <fafte-param><fafte-get int=".int" /></fafte-param>
+        </fafte-condition-not-equal>
+    </fafte-condition>
+    <fafte-then>
+        a
+    </fafte-then>
+    <fafte-else>
+        b
+    </fafte-else>
+</fafte-if>

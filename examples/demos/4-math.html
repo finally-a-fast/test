@@ -1,0 +1,21 @@
+<fafte-round>
+    3.14159265359
+</fafte-round>
+<fafte-round precision="4" value="3.14159265359" />
+<fafte-round precision=".small-int" value=".float" />
+
+<fafte-calc c="40 + 2" />
+
+<fafte-calc>
+    40 + 2 * <fafte-get v=".small-int" />
+</fafte-calc>
+
+<fafte-calc>
+    (40 + 2) * <fafte-get v=".small-int" />
+</fafte-calc>
+
+<fafte-calc>
+    sin(42)
+</fafte-calc>
+
+<fafte-calc c="42^3" />

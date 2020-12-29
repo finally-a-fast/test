@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2019 Finally a fast
+Copyright (c) 2020 Finally a fast
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
