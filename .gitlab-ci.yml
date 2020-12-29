@@ -52,11 +52,8 @@ build:
 
 code_quality:
     stage: test
-    variables:
-        REPORT_FORMAT: html
     artifacts:
-        expose_as: 'Code Quality Report'
-        paths: [gl-code-quality-report.html]
+        paths: [gl-code-quality-report.json]
 
 phpunit:php74:
     stage: test
