@@ -54,8 +54,12 @@ test:
         - build
     script:
         - cd build
-        - vendor/bin/phpunit --coverage-text --colors=never
+        - vendor/bin/phpunit --coverage-text --colors=never --log-junit report.xml
     allow_failure: true
+    artifacts:
+        when: always
+        reports:
+            junit: report.xml
 
 test:php8:
     image: php:8.0-cli
@@ -65,8 +69,12 @@ test:php8:
         - build
     script:
         - cd build
-        - vendor/bin/phpunit --coverage-text --colors=never
+        - vendor/bin/phpunit --coverage-text --colors=never --log-junit report.xml
     allow_failure: true
+    artifacts:
+        when: always
+        reports:
+            junit: report.xml
 
 docs:
     stage: docs
