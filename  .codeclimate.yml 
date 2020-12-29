@@ -1,4 +1,13 @@
+version: "2"
 plugins:
+    duplication:
+        enabled: true
+        config:
+            languages:
+                - javascript
+                - php
+    fixme:
+        enabled: true
     phpmd:
         enabled: true
         config:
