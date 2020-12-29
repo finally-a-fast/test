@@ -28,6 +28,9 @@ stages:
     - docs
     - deploy
 
+include:
+    - template: Code-Quality.gitlab-ci.yml
+
 build:
     stage: build
     only:
@@ -46,6 +49,14 @@ build:
         paths:
             - build
         expire_in: 1 day
+
+code_quality:
+    stage: test
+    variables:
+        REPORT_FORMAT: html
+    artifacts:
+        expose_as: 'Code Quality Report'
+        paths: [gl-code-quality-report.html]
 
 test:phpunit:php74:
     stage: test
