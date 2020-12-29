@@ -135,7 +135,7 @@ infection:
         - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin --no-progress
     allow_failure: true
 
-test:phpcs:
+phpcs:
     stage: test
     only:
         - dev
@@ -147,6 +147,7 @@ test:phpcs:
         when: always
         reports:
             junit: result-phpcs.xml
+    allow_failure: true
 
 docs:
     stage: docs
