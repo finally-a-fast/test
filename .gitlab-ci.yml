@@ -6,13 +6,12 @@ before_script:
     - apt-get update -yqq
     - apt-get install -yqq rsync git libonig-dev libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev zip unzip
     # Install & enable Xdebug for code coverage reports
-    #- pecl install xdebug
-    #- docker-php-ext-enable xdebug
+    - pecl install xdebug apcu
+    - docker-php-ext-enable xdebug apcu
+    - pecl clear-cache
     # Install PHP extensions
     - docker-php-source extract
-    - mkdir -p /usr/src/php/ext/apcu
-    - curl -fsSL https://github.com/krakjoe/apcu/archive/v5.1.19.tar.gz | tar xvz -C /usr/src/php/ext/apcu --strip 1
-    - docker-php-ext-install apcu curl json intl gd xml opcache dom
+    - docker-php-ext-install curl json intl gd xml opcache dom
     - docker-php-source delete
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - mkdir -p ~/.ssh
@@ -22,9 +21,6 @@ before_script:
     - git config --global user.email "bot@finally-a-fast.com"
     - git config --global user.name "FAF Bot"
     - curl -sS https://getcomposer.org/installer | php
-
-# Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
-# See http://docs.gitlab.com/ce/ci/services/README.html for examples.
 
 stages:
     - build
@@ -51,14 +47,13 @@ build:
             - build
         expire_in: 1 day
 
-# Run our tests
-# If Xdebug was installed you can generate a coverage report and see code coverage metrics.
 test:
     stage: test
     only:
         - dev
         - build
     script:
+        - cd build
         - vendor/bin/phpunit --coverage-text --colors=never
     allow_failure: true
 
@@ -69,6 +64,7 @@ test:php8:
         - dev
         - build
     script:
+        - cd build
         - vendor/bin/phpunit --coverage-text --colors=never
     allow_failure: true
 
