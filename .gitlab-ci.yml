@@ -52,8 +52,6 @@ build:
 
 code_quality:
     stage: test
-    artifacts:
-        paths: [gl-code-quality-report.json]
 
 phpunit:php74:
     stage: test
