@@ -47,21 +47,21 @@ build:
             - build
         expire_in: 1 day
 
-test:
+test:phpunit:php74:
     stage: test
     only:
         - dev
         - build
     script:
         - cd build
-        - vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
             junit: report.xml
 
-test:php8:
+test:phpunit:php8:
     image: php:8.0-cli
     stage: test
     only:
@@ -69,12 +69,52 @@ test:php8:
         - build
     script:
         - cd build
-        - vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
             junit: report.xml
+
+test:phpstan:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - cd build
+        - vendor/bin/phpstan analyse
+    allow_failure: true
+
+test:psalm:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - cd build
+        - vendor/bin/psalm
+    allow_failure: true
+
+test:phpmd:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - cd build
+        - vendor/bin/phpmd src text ruleset.xml
+    allow_failure: true
+
+test:infection:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - cd build
+        - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin
+    allow_failure: true
 
 docs:
     stage: docs
