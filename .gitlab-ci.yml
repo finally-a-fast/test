@@ -65,12 +65,12 @@ phpunit:php74:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../phpunit74.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../result-phpunit74.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: phpunit74.xml
+            junit: result-phpunit74.xml
 
 phpunit:php8:
     image: php:8.0-cli
@@ -80,12 +80,12 @@ phpunit:php8:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../phpunit80.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../result-phpunit80.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: phpunit80.xml
+            junit: result-phpunit80.xml
 
 phpstan:
     stage: test
@@ -94,12 +94,12 @@ phpstan:
         - build
     script:
         - cd build
-        - vendor/bin/phpstan analyse --error-format=junit --no-progress > phpstan.xml
+        - vendor/bin/phpstan analyse --error-format=junit --no-progress > ../result-phpstan.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: phpstan.xml
+            junit: result-phpstan.xml
 
 psalm:
     stage: test
@@ -108,12 +108,12 @@ psalm:
         - build
     script:
         - cd build
-        - vendor/bin/psalm --output-format=junit --no-progress > psalm.xml
+        - vendor/bin/psalm --output-format=junit --no-progress > ../result-psalm.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: psalm.xml
+            junit: result-psalm.xml
 
 phpmd:
     stage: test
@@ -142,11 +142,11 @@ test:phpcs:
         - build
     script:
         - cd build
-        - vendor/bin/phpcs --report=junit > phpcs.xml
+        - vendor/bin/phpcs --report=junit > ../result-phpcs.xml
     artifacts:
         when: always
         reports:
-            junit: phpcs.xml
+            junit: result-phpcs.xml
 
 docs:
     stage: docs
