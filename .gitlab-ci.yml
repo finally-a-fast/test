@@ -26,13 +26,6 @@ before_script:
 # Bring in any services we need http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
 # See http://docs.gitlab.com/ce/ci/services/README.html for examples.
 
-
-# Set any variables we need
-variables:
-    # Configure mysql environment variables (https://hub.docker.com/r/_/mysql/)
-    MYSQL_DATABASE: mysql_database
-    MYSQL_ROOT_PASSWORD: mysql_strong_password
-
 stages:
     - build
     #    - test
@@ -60,17 +53,24 @@ build:
 
 # Run our tests
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
-#
-#test:
-#        services:
-#            - mysql:5.7
-#    stage: test
-#    only:
-#        - dev
-#        - build
-#    script:
-#        - echo "test"
-##    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
+test:
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - vendor/bin/phpunit --coverage-text --colors=never
+    allow_failure: true
+
+test:php8:
+    image: php:8.0-cli
+    stage: test
+    only:
+        - dev
+        - build
+    script:
+        - vendor/bin/phpunit --coverage-text --colors=never
+    allow_failure: true
 
 docs:
     stage: docs
