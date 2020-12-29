@@ -58,7 +58,7 @@ code_quality:
         expose_as: 'Code Quality Report'
         paths: [gl-code-quality-report.html]
 
-test:phpunit:php74:
+phpunit:php74:
     stage: test
     only:
         - dev
@@ -72,7 +72,7 @@ test:phpunit:php74:
         reports:
             junit: phpunit74.xml
 
-test:phpunit:php8:
+phpunit:php8:
     image: php:8.0-cli
     stage: test
     only:
@@ -87,7 +87,7 @@ test:phpunit:php8:
         reports:
             junit: phpunit80.xml
 
-test:phpstan:
+phpstan:
     stage: test
     only:
         - dev
@@ -101,7 +101,7 @@ test:phpstan:
         reports:
             junit: phpstan.xml
 
-test:psalm:
+psalm:
     stage: test
     only:
         - dev
@@ -115,7 +115,7 @@ test:psalm:
         reports:
             junit: psalm.xml
 
-test:phpmd:
+phpmd:
     stage: test
     only:
         - dev
@@ -125,7 +125,7 @@ test:phpmd:
         - vendor/bin/phpmd src text ruleset.xml
     allow_failure: true
 
-test:infection:
+infection:
     stage: test
     only:
         - dev

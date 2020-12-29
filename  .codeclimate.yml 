@@ -1,0 +1,11 @@
+plugins:
+    phpmd:
+        enabled: true
+        config:
+            file_extensions:
+                - php
+            rulesets: "ruleset.xml"
+    phpcodesniffer:
+        enabled: true
+        config:
+            standard: "PSR12"
