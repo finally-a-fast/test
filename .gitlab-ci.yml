@@ -47,6 +47,23 @@ build:
             - build
         expire_in: 1 day
 
+include:
+    - template: Code-Quality.gitlab-ci.yml
+
+code_quality:
+    before_script:
+        - ''
+
+code_quality_html:
+    extends: code_quality
+    variables:
+        REPORT_FORMAT: html
+    artifacts:
+        reports:
+            codequality: ''
+        expose_as: "Code Quality"
+        paths: [ gl-code-quality-report.html ]
+
 phpunit:php74:
     stage: test
     only:
@@ -98,13 +115,11 @@ psalm:
     script:
         - cd build
         - vendor/bin/psalm --output-format=junit --no-progress > ../report-psalm.xml
-        - vendor/bin/psalm --output-format=codeclimate --no-progress > ../codeclimate-psalm.json
     allow_failure: true
     artifacts:
         when: always
         reports:
             junit: report-psalm.xml
-            codequality: codeclimate-psalm.json
 
 phpmd:
     stage: test
