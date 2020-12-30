@@ -69,12 +69,12 @@ phpunit:php74:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../result-phpunit74.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report-phpunit74.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: result-phpunit74.xml
+            junit: report-phpunit74.xml
 
 phpunit:php8:
     image: php:8.0-cli
@@ -84,12 +84,12 @@ phpunit:php8:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../result-phpunit80.xml
+        - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --colors=never --log-junit ../report-phpunit80.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: result-phpunit80.xml
+            junit: report-phpunit80.xml
 
 phpstan:
     stage: test
@@ -98,12 +98,12 @@ phpstan:
         - build
     script:
         - cd build
-        - vendor/bin/phpstan analyse --error-format=junit --no-progress --no-interaction --memory-limit=-1 > ../result-phpstan.xml
+        - vendor/bin/phpstan analyse --error-format=junit --no-progress --no-interaction --memory-limit=-1 > ../report-phpstan.xml
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: result-phpstan.xml
+            junit: report-phpstan.xml
 
 psalm:
     stage: test
@@ -112,12 +112,14 @@ psalm:
         - build
     script:
         - cd build
-        - vendor/bin/psalm --output-format=junit --no-progress > ../result-psalm.xml
+        - vendor/bin/psalm --output-format=junit --no-progress > ../report-psalm.xml
+        - vendor/bin/psalm --output-format=codeclimate --no-progress > ../codeclimate-psalm.json
     allow_failure: true
     artifacts:
         when: always
         reports:
-            junit: result-psalm.xml
+            junit: report-psalm.xml
+            codequality: codeclimate-psalm.json
 
 phpmd:
     stage: test
@@ -146,11 +148,11 @@ phpcs:
         - build
     script:
         - cd build
-        - vendor/bin/phpcs --report=junit > ../result-phpcs.xml
+        - vendor/bin/phpcs --report=junit > ../report-phpcs.xml
     artifacts:
         when: always
         reports:
-            junit: result-phpcs.xml
+            junit: report-phpcs.xml
     allow_failure: true
 
 docs:
