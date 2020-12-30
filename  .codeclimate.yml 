@@ -16,5 +16,7 @@ plugins:
             rulesets: "ruleset.xml"
     phpcodesniffer:
         enabled: true
+        channel: beta
         config:
+            file_extensions: "php"
             standard: "PSR12"
