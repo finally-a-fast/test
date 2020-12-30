@@ -51,7 +51,8 @@ build:
         expire_in: 1 day
 
 code_quality:
-    image: php:7.4-cli
+    before_script:
+        - ''
 
 phpunit:php74:
     stage: test
