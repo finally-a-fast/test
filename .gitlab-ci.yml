@@ -98,7 +98,7 @@ phpstan:
         - build
     script:
         - cd build
-        - vendor/bin/phpstan analyse --error-format=junit --no-progress --no-interaction --configuration phpstan.neon.dist > ../result-phpstan.xml
+        - vendor/bin/phpstan analyse --error-format=junit --no-progress --no-interaction --memory-limit=-1 > ../result-phpstan.xml
     allow_failure: true
     artifacts:
         when: always
