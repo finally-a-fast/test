@@ -53,3 +53,4 @@ phpunit.xml
 # log files
 /examples/parser.log
 infection.log
+infection-summary.log

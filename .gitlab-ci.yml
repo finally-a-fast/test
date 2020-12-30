@@ -60,7 +60,7 @@ code_quality_html:
         REPORT_FORMAT: html
     artifacts:
         expose_as: "Code Quality"
-        paths: [gl-code-quality-report.html]
+        paths: [ gl-code-quality-report.html ]
 
 phpunit:php74:
     stage: test
@@ -128,8 +128,12 @@ phpmd:
         - build
     script:
         - cd build
-        - vendor/bin/phpmd src text ruleset.xml
+        - vendor/bin/phpmd src html ruleset.xml > ../report-phpmess.html
     allow_failure: true
+    artifacts:
+        when: always
+        expose_as: "PHP Mess Detector"
+        paths: [ report-phpmess.html ]
 
 infection:
     stage: test
@@ -138,8 +142,12 @@ infection:
         - build
     script:
         - cd build
-        - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin --no-progress
+        - XDEBUG_MODE=coverage vendor/bin/roave-infection-static-analysis-plugin --no-progress --no-interaction
     allow_failure: true
+    artifacts:
+        when: always
+        expose_as: "Infection"
+        paths: [ build/infection.log, build/infection-summary.log ]
 
 phpcs:
     stage: test
@@ -149,11 +157,11 @@ phpcs:
     script:
         - cd build
         - vendor/bin/phpcs --report=junit > ../report-phpcs.xml
+    allow_failure: true
     artifacts:
         when: always
         reports:
             junit: report-phpcs.xml
-    allow_failure: true
 
 docs:
     stage: docs
